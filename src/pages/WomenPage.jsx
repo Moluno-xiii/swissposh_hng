@@ -31,7 +31,7 @@ export default function WomenPage() {
           src="/woman_1_large.svg"
           alt="image of a woman"
           height={702}
-          className="w-[100dvw] max-sm:hidden"
+          className="max-sm:hidden"
         />
         <div className="absolute bottom-0 flex h-[107px] w-[100vw] flex-col items-center justify-center bg-primary bg-opacity-[62%] text-white">
           <span className="text-[7.63px] font-medium uppercase leading-[10.3px]">
@@ -47,19 +47,29 @@ export default function WomenPage() {
       </div>
       <div className="my-6 flex flex-col gap-y-6">
         <div className="relative mx-auto max-w-[678px]">
-          <div className="mx-6 flex h-[414px] flex-row items-center justify-center">
+          <div className="mx-6 flex h-[414px] flex-row items-center justify-center md:h-[515.18px]">
             <img
               src="/woman_2.png"
               alt="image of a female model"
-              className="h-full w-full flex-1"
+              className="h-full w-full flex-1 md:hidden"
+            />
+            <img
+              src="/public/woman_2_large.png"
+              alt="image of a female model"
+              className="h-full w-full flex-1 max-sm:hidden"
+            />
+            <img
+              src="/public/woman_3_large.png"
+              alt="image of a female model"
+              className="h-full w-full flex-1 max-sm:hidden"
             />
             <img
               src="/woman_3.png"
               alt="image of a female model"
-              className="h-full w-full flex-1"
+              className="h-full w-full flex-1 md:hidden"
             />
           </div>
-          <div className="absolute bottom-0 flex h-[107px] w-[100vw] flex-col items-center justify-center bg-transparent bg-opacity-[62%] text-white">
+          <div className="absolute w-full bottom-0 flex h-[107px] max-sm:w-[100vw] flex-col items-center justify-center bg-transparent bg-opacity-[62%] text-white">
             <span className="text-[7.63px] font-medium uppercase leading-[10.3px]">
               new arrivals
             </span>
@@ -73,19 +83,29 @@ export default function WomenPage() {
         </div>
 
         <div className="relative mx-auto max-w-[678px]">
-          <div className="mx-6 flex h-[414px] flex-row items-center justify-center">
+          <div className="mx-6 flex h-[414px] flex-row items-center justify-center md:h-[515.18px]">
             <img
               src="/woman_4.png"
               alt="image of a female model"
-              className="h-full w-full flex-1"
+              className="h-full w-full flex-1 md:hidden"
+            />
+            <img
+              src="/public/woman_4_large.png"
+              alt="image of a female model"
+              className="h-full w-full flex-1 max-sm:hidden"
+            />
+            <img
+              src="/public/woman_5_large.png"
+              alt="image of a female model"
+              className="h-full w-full flex-1 max-sm:hidden"
             />
             <img
               src="/woman_5.png"
               alt="image of a female model"
-              className="h-full w-full flex-1"
+              className="h-full w-full flex-1 md:hidden"
             />
           </div>
-          <div className="absolute bottom-0 flex h-[107px] w-[100vw] flex-col items-center justify-center bg-transparent bg-opacity-[62%] text-white">
+          <div className="absolute bottom-0 w-full flex h-[107px] max-sm:w-[100vw] flex-col items-center justify-center bg-transparent bg-opacity-[62%] text-white">
             <span className="text-[7.63px] font-medium uppercase leading-[10.3px]">
               new arrivals
             </span>
@@ -110,7 +130,7 @@ export default function WomenPage() {
 
       <div className="my-6 flex flex-col gap-y-6">
         <div className="relative">
-          <div className="flex flex-row items-center justify-center mx-6">
+          <div className="mx-6 flex flex-row items-center justify-center">
             <img
               src="/woman_6.png"
               alt="image of a female model"
@@ -132,7 +152,7 @@ export default function WomenPage() {
         </div>
 
         <div className="relative">
-          <div className="flex flex-row items-center justify-center mx-6">
+          <div className="mx-6 flex flex-row items-center justify-center">
             <img
               src="/woman_7.png"
               alt="image of a female model"
