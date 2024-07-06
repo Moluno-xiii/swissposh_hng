@@ -69,7 +69,7 @@ export default function WomenPage() {
               className="h-full w-full flex-1 md:hidden"
             />
           </div>
-          <div className="absolute w-full bottom-0 flex h-[107px] max-sm:w-[100vw] flex-col items-center justify-center bg-transparent bg-opacity-[62%] text-white">
+          <div className="absolute bottom-0 flex h-[107px] w-full flex-col items-center justify-center bg-transparent bg-opacity-[62%] text-white max-sm:w-[100vw]">
             <span className="text-[7.63px] font-medium uppercase leading-[10.3px]">
               new arrivals
             </span>
@@ -105,7 +105,7 @@ export default function WomenPage() {
               className="h-full w-full flex-1 md:hidden"
             />
           </div>
-          <div className="absolute bottom-0 w-full flex h-[107px] max-sm:w-[100vw] flex-col items-center justify-center bg-transparent bg-opacity-[62%] text-white">
+          <div className="absolute bottom-0 flex h-[107px] w-full flex-col items-center justify-center bg-transparent bg-opacity-[62%] text-white max-sm:w-[100vw]">
             <span className="text-[7.63px] font-medium uppercase leading-[10.3px]">
               new arrivals
             </span>
@@ -130,12 +130,16 @@ export default function WomenPage() {
 
       <div className="my-6 flex flex-col gap-y-6">
         <div className="relative">
-          <div className="mx-6 flex flex-row items-center justify-center">
+          <div className="mx-6 flex h-[414px] max-w-[678px] md:mx-auto flex-row items-center justify-center md:h-[515px]">
             <img
               src="/woman_6.png"
               alt="image of a female model"
-              height={414.54}
-              className=""
+              className="h-full md:hidden"
+            />
+            <img
+              src="/woman_6_large.png"
+              alt="image of a female model"
+              className="h-full max-sm:hidden"
             />
           </div>
           <div className="absolute bottom-0 flex h-[107px] w-[100vw] flex-col items-center justify-center bg-transparent bg-opacity-[62%] text-white">
@@ -152,15 +156,19 @@ export default function WomenPage() {
         </div>
 
         <div className="relative">
-          <div className="mx-6 flex flex-row items-center justify-center">
+          <div className="mx-6 flex h-[414px] max-w-[678px] md:mx-auto flex-row items-center justify-center md:h-[515px]">
             <img
               src="/woman_7.png"
               alt="image of a female model"
-              height={414.54}
-              className=""
+              className="h-full md:hidden"
+            />
+            <img
+              src="/woman_7_large.png"
+              alt="image of a female model"
+              className="h-full max-sm:hidden"
             />
           </div>
-          <div className="absolute bottom-0 flex h-[107px] w-[100vw] flex-col items-center justify-center bg-transparent bg-opacity-[62%] text-white">
+          <div className="absolute bottom-0 flex h-[107px] w-full flex-col items-center justify-center bg-transparent bg-opacity-[62%] text-white max-sm:w-[100vw]">
             <span className="text-[7.63px] font-medium uppercase leading-[10.3px]">
               new arrivals
             </span>
