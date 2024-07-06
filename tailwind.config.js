@@ -2,17 +2,7 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {
-      screens: {
-        "3xl": "2400px",
-      },
-      fontFamily: {
-        sans: "satoshi, serif",
-      },
-      colors: {
-        primary: "#001F3F",
-      },
-    },
+    extend: {},
   },
   plugins: [],
 };

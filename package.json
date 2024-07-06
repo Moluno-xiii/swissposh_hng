@@ -1,7 +1,7 @@
 {
   "name": "swissposh_hng",
   "private": true,
-  "homepage": "http://Moluno-xiii.github.io/swissposh_hng",
+  "homepage": "https://Moluno-xiii.github.io/swissposh_hng",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
@@ -10,11 +10,12 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.24.1"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",

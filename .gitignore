@@ -12,7 +12,6 @@ dist
 dist-ssr
 .eslintrc.cjs
 .prettierrc.json
-vite.config.js
 *.local
 
 # Editor directories and files
