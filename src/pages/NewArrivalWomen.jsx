@@ -3,7 +3,7 @@ import Products from "../components/Products";
 
 const NewArrivalWomen = () => {
   return (
-    <div className="bg-[#F5F5F5] md:bg-white">
+    <div className="bg-[#F5F5F5] max-md:-mb-10 md:bg-white">
       <div className="flex flex-row">
         <div className="flex h-[43px] flex-1 items-center justify-center bg-black text-xxs font-bold uppercase leading-[10.8px] text-white md:h-[55px] md:text-xs">
           up to 50% off fresh finds
@@ -23,7 +23,7 @@ const NewArrivalWomen = () => {
         <li className="hidden md:inline-block">Magazine</li>
         <li className="hidden md:inline-block">Sustainability</li>
       </ul>
-      <p className="hidden text-center my-10 leading-[21.6px] bg-white text-base font-black uppercase md:block">
+      <p className="my-10 hidden bg-white text-center text-base font-black uppercase leading-[21.6px] md:block">
         up to 50% fresh finds
       </p>
 
@@ -69,7 +69,7 @@ const NewArrivalWomen = () => {
         ))}
       </div>
 
-      <div className="mt-5 flex flex-col items-center justify-center gap-y-2 md:mt-10">
+      <div className="flex flex-col items-center justify-center gap-y-2 py-5 md:py-10">
         <span className="text-[8.09px] font-medium text-[#001F3FDB] md:text-xs">
           Showing 12 of 1020
         </span>
