@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="mt-7 flex h-[55px] flex-row items-center justify-center bg-black px-2 md:h-[78px] md:justify-between md:px-6">
+    <footer className="mt-auto flex h-[55px] flex-row items-center justify-center bg-black px-2 md:h-[78px] md:justify-between md:px-6">
       <ul className="hidden flex-row gap-x-2 text-xs font-medium text-white md:flex">
         <li>Let Us Help You</li>
         <li>Get to Know Us</li>

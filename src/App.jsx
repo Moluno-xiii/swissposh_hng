@@ -4,6 +4,7 @@ import MenPage from "./pages/MenPage";
 import Home from "./pages/Home";
 import ErrorElement from "./components/ErrorElement";
 import NewArrivalWomen from "./pages/NewArrivalWomen";
+import Checkout from "./pages/Checkout";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
       {
         path: "/new-arrivals",
         element: <NewArrivalWomen />
+      },
+      {
+        path: "/checkout",
+        element: <Checkout />
       }
     ],
   },
