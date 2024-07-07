@@ -4,15 +4,15 @@ const Hero = () => {
   return (
     <>
       <div className="flex flex-row">
-        <div className="flex h-[43px] flex-1 items-center justify-center bg-black text-xxs uppercase leading-[10.8px] text-white md:h-[55px] md:text-xs">
+        <div className="flex h-[43px] flex-1 items-center justify-center bg-black text-xxs font-bold uppercase leading-[10.8px] text-white md:h-[55px] md:text-xs">
           up to 50% off fresh finds
         </div>
-        <div className="flex h-[43px] flex-1 items-center justify-center bg-white text-xxs uppercase leading-[10.8px] text-primary text-opacity-70 md:h-[55px] md:text-xs">
+        <div className="flex h-[43px] flex-1 items-center justify-center bg-white text-xxs font-bold uppercase leading-[10.8px] text-[#001F3FB2] md:h-[55px] md:text-xs">
           Free worldwide delivery
         </div>
       </div>
       <div className="flex h-[75px] flex-col items-center justify-center gap-y-[6px] bg-primary text-center text-white md:h-[104px]">
-        <p className="h-[16px] text-sm font-bold uppercase leading-[16.2px] md:text-lg">
+        <p className="h-[16px] text-sm font-bold uppercase leading-[16.2px] md:mb-3 md:text-lg">
           up to 50% off fresh finds
         </p>
         <p className="h-3 text-xxs font-medium leading-[10.8px] md:text-xs">

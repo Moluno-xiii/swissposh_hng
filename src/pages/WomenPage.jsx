@@ -4,9 +4,7 @@ import SecondImagesSection from "../components/SecondImagesSection";
 export default function WomenPage() {
   return (
     <div className="">
-      <div className="flex h-[55px] items-center justify-center bg-[#5A6D81] text-sm font-bold uppercase leading-[18.9px] text-white">
-        women
-      </div>
+
       <HeroSection />
 
       <FirstImagesSection />
