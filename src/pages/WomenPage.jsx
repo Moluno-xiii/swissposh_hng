@@ -1,186 +1,26 @@
+import HeroSection from "../components/Hero";
+import FirstImagesSection from "../components/FirstImagesSection";
+import SecondImagesSection from "../components/SecondImagesSection";
 export default function WomenPage() {
   return (
     <div className="">
       <div className="flex h-[55px] items-center justify-center bg-[#5A6D81] text-sm font-bold uppercase leading-[18.9px] text-white">
         women
       </div>
-      <div className="flex flex-row">
-        <div className="flex h-[43px] flex-1 items-center justify-center bg-black text-xxs uppercase leading-[10.8px] text-white">
-          up to 50% off fresh finds
-        </div>
-        <div className="flex h-[43px] flex-1 items-center justify-center bg-white text-xxs uppercase leading-[10.8px] text-primary text-opacity-70">
-          up to 50% off fresh finds
-        </div>
-      </div>
-      <div className="flex h-[75px] flex-col items-center justify-center gap-y-[6px] bg-primary text-center text-white">
-        <p className="h-[16px] text-sm font-bold uppercase leading-[16.2px]">
-          up to 50% off fresh finds
-        </p>
-        <p className="h-3 text-xxs font-medium leading-[10.8px]">
-          Members to get free delivery over every $30 and free returns
-        </p>
-      </div>
-      <div className="relative flex justify-center bg-white">
-        <img
-          src="/woman_1.png"
-          alt="image of a woman"
-          height={70}
-          className="w-full md:hidden"
-        />
-        <img
-          src="/woman_1_large.svg"
-          alt="image of a woman"
-          height={702}
-          className="max-sm:hidden"
-        />
-        <div className="absolute bottom-0 flex h-[107px] w-[100vw] flex-col items-center justify-center bg-primary bg-opacity-[62%] text-white">
-          <span className="text-[7.63px] font-medium uppercase leading-[10.3px]">
-            new arrivals
-          </span>
-          <p className="mb-[12.71px] mt-[8.9px] text-[10.17px] font-black uppercase leading-[13.73px]">
-            up to 50% off fresh finds
-          </p>
-          <button className="h-[26.06px] w-[73.09px] rounded-[2.54px] bg-white text-center text-[10.21px] font-medium capitalize leading-[13.73px] text-black">
-            shop now
-          </button>
-        </div>
-      </div>
-      <div className="my-6 flex flex-col gap-y-6">
-        <div className="relative mx-auto max-w-[678px]">
-          <div className="mx-6 flex h-[414px] flex-row items-center justify-center md:h-[515.18px]">
-            <img
-              src="/woman_2.png"
-              alt="image of a female model"
-              className="h-full w-full flex-1 md:hidden"
-            />
-            <img
-              src="/public/woman_2_large.png"
-              alt="image of a female model"
-              className="h-full w-full flex-1 max-sm:hidden"
-            />
-            <img
-              src="/public/woman_3_large.png"
-              alt="image of a female model"
-              className="h-full w-full flex-1 max-sm:hidden"
-            />
-            <img
-              src="/woman_3.png"
-              alt="image of a female model"
-              className="h-full w-full flex-1 md:hidden"
-            />
-          </div>
-          <div className="absolute bottom-0 flex h-[107px] w-full flex-col items-center justify-center bg-transparent bg-opacity-[62%] text-white max-sm:w-[100vw]">
-            <span className="text-[7.63px] font-medium uppercase leading-[10.3px]">
-              new arrivals
-            </span>
-            <p className="mb-[12.71px] mt-[8.9px] text-[10.17px] font-black uppercase leading-[13.73px]">
-              up to 50% off fresh finds
-            </p>
-            <button className="h-[26.06px] w-[73.09px] rounded-[2.54px] bg-white text-center text-[10.21px] font-medium capitalize leading-[13.73px] text-black">
-              shop now
-            </button>
-          </div>
-        </div>
+      <HeroSection />
 
-        <div className="relative mx-auto max-w-[678px]">
-          <div className="mx-6 flex h-[414px] flex-row items-center justify-center md:h-[515.18px]">
-            <img
-              src="/woman_4.png"
-              alt="image of a female model"
-              className="h-full w-full flex-1 md:hidden"
-            />
-            <img
-              src="/public/woman_4_large.png"
-              alt="image of a female model"
-              className="h-full w-full flex-1 max-sm:hidden"
-            />
-            <img
-              src="/public/woman_5_large.png"
-              alt="image of a female model"
-              className="h-full w-full flex-1 max-sm:hidden"
-            />
-            <img
-              src="/woman_5.png"
-              alt="image of a female model"
-              className="h-full w-full flex-1 md:hidden"
-            />
-          </div>
-          <div className="absolute bottom-0 flex h-[107px] w-full flex-col items-center justify-center bg-transparent bg-opacity-[62%] text-white max-sm:w-[100vw]">
-            <span className="text-[7.63px] font-medium uppercase leading-[10.3px]">
-              new arrivals
-            </span>
-            <p className="mb-[12.71px] mt-[8.9px] text-[10.17px] font-black uppercase leading-[13.73px]">
-              up to 50% off fresh finds
-            </p>
-            <button className="h-[26.06px] w-[73.09px] rounded-[2.54px] bg-white text-center text-[10.21px] font-medium capitalize leading-[13.73px] text-black">
-              shop now
-            </button>
-          </div>
-        </div>
-      </div>
+      <FirstImagesSection />
 
-      <div className="flex h-[94px] flex-col items-center justify-center gap-y-[6px] bg-primary bg-opacity-[62%] text-center text-[#FFFFFFDE]">
-        <p className="h-[19px] text-[13.7px] font-black uppercase leading-[18.5px]">
+      <div className="flex h-[94px] flex-col items-center justify-center gap-y-[6px] bg-primary bg-opacity-[62%] text-center text-[#FFFFFFDE] md:h-[104px]">
+        <p className="h-[19px] text-[13.7px] font-black uppercase leading-[18.5px] md:h-[32px] md:text-2xl">
           up to 50% off fresh finds
         </p>
-        <p className="h-[9px] text-[6.85px] font-medium leading-[9.25px]">
+        <p className="text-[6.85px] font-medium leading-[9.25px] md:h-4 md:text-xs">
           Members to get free delivery over every $30 and free returns
         </p>
       </div>
 
-      <div className="my-6 flex flex-col gap-y-6">
-        <div className="relative">
-          <div className="mx-6 flex h-[414px] max-w-[678px] md:mx-auto flex-row items-center justify-center md:h-[515px]">
-            <img
-              src="/woman_6.png"
-              alt="image of a female model"
-              className="h-full md:hidden"
-            />
-            <img
-              src="/woman_6_large.png"
-              alt="image of a female model"
-              className="h-full max-sm:hidden"
-            />
-          </div>
-          <div className="absolute bottom-0 flex h-[107px] w-[100vw] flex-col items-center justify-center bg-transparent bg-opacity-[62%] text-white">
-            <span className="text-[7.63px] font-medium uppercase leading-[10.3px]">
-              new arrivals
-            </span>
-            <p className="mb-[12.71px] mt-[8.9px] text-[10.17px] font-black uppercase leading-[13.73px]">
-              up to 50% off fresh finds
-            </p>
-            <button className="h-[26.06px] w-[73.09px] rounded-[2.54px] bg-white text-center text-[10.21px] font-medium capitalize leading-[13.73px] text-black">
-              shop now
-            </button>
-          </div>
-        </div>
-
-        <div className="relative">
-          <div className="mx-6 flex h-[414px] max-w-[678px] md:mx-auto flex-row items-center justify-center md:h-[515px]">
-            <img
-              src="/woman_7.png"
-              alt="image of a female model"
-              className="h-full md:hidden"
-            />
-            <img
-              src="/woman_7_large.png"
-              alt="image of a female model"
-              className="h-full max-sm:hidden"
-            />
-          </div>
-          <div className="absolute bottom-0 flex h-[107px] w-full flex-col items-center justify-center bg-transparent bg-opacity-[62%] text-white max-sm:w-[100vw]">
-            <span className="text-[7.63px] font-medium uppercase leading-[10.3px]">
-              new arrivals
-            </span>
-            <p className="mb-[12.71px] mt-[8.9px] text-[10.17px] font-black uppercase leading-[13.73px]">
-              up to 50% off fresh finds
-            </p>
-            <button className="h-[26.06px] w-[73.09px] rounded-[2.54px] bg-white text-center text-[10.21px] font-medium capitalize leading-[13.73px] text-black">
-              shop now
-            </button>
-          </div>
-        </div>
-      </div>
+      <SecondImagesSection />
     </div>
   );
 }
