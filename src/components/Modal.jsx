@@ -4,15 +4,25 @@ const Modal = ({ onClose }) => {
   return (
     <ul className="fixed inset-0 z-50 gap-y-4 bg-primary px-4 py-6 uppercase text-white md:hidden">
       <div className="flex flex-row justify-between text-base">
-        <span className="mb-10 font-black leading-[21.6px]">Women</span>
+        <div className="flex flex-row gap-x-4">
+          <span onClick={onClose} className="mb-10 font-black leading-[21.6px] text-[#F20000]">
+            <NavLink to="/product/women">Women</NavLink>
+          </span>
+          <span onClick={onClose} className="mb-10 font-black leading-[21.6px]">
+            <NavLink to="/product/men">Men</NavLink>
+          </span>
+        </div>
         <span className="mb-10 font-black leading-[21.6px]" onClick={onClose}>
           X
         </span>
       </div>
-      <li className="mb-5 flex flex-row items-center justify-between border-white text-[14px] font-bold leading-[18.9px] hover:border-b-2" onClick={onClose}>
+      <li
+        className="mb-5 flex flex-row items-center justify-between border-white text-[14px] font-bold leading-[18.9px] hover:border-b-2"
+        onClick={onClose}
+      >
         <NavLink
           to="/new-arrivals"
-          className="w-full flex flex-row items-center justify-between"
+          className="flex w-full flex-row items-center justify-between"
         >
           new arrivals
           <img src="/right-arrow.svg" alt="right-arrow" />

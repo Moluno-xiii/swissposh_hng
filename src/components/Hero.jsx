@@ -1,6 +1,7 @@
+/* eslint-disable react/prop-types */
 import { NavLink } from "react-router-dom";
 
-const Hero = () => {
+const Hero = ({alt, image1, image1_large, href}) => {
   return (
     <>
       <div className="flex flex-row">
@@ -21,14 +22,14 @@ const Hero = () => {
       </div>
       <div className="relative flex justify-center bg-white">
         <img
-          src="/woman_1.png"
-          alt="image of a woman"
+          src={image1}
+          alt="image of a female model"
           height={70}
           className="w-full md:hidden"
         />
         <img
-          src="/woman_1_large.svg"
-          alt="image of a woman"
+          src={image1_large}
+          alt={alt}
           height={702}
           className="hidden w-[100vw] md:inline-block"
         />
@@ -40,7 +41,7 @@ const Hero = () => {
             up to 50% off fresh finds
           </p>
           <button className="h-[26.06px] w-[73.09px] rounded-[2.54px] bg-white text-center text-[10.21px] font-medium capitalize leading-[13.73px] text-black md:h-[41px] md:w-[115px] md:text-base">
-            <NavLink to="new-arrivals">shop now</NavLink>
+            <NavLink to={href}>shop now</NavLink>
           </button>
         </div>
       </div>

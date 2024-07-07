@@ -7,7 +7,7 @@ const Footer = () => {
         <li>Explore</li>
         <li>Corporate Info</li>
       </ul>
-      <p className="items-center justify-center bg-black text-center text-[10px] font-bold text-white md:text-[14px]">
+      <p className="items-center justify-center bg-black text-center text-[10px] font-bold text-white lg:text-[14px]">
         SWISSPOSH 2024. All right reserved
       </p>
       <ul className="hidden flex-row gap-x-2 text-xs font-medium text-white md:flex">

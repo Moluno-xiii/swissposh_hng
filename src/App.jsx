@@ -3,14 +3,15 @@ import WomenPage from "./pages/WomenPage";
 import MenPage from "./pages/MenPage";
 import Home from "./pages/Home";
 import ErrorElement from "./components/ErrorElement";
-import NewArrivalWomen from "./pages/NewArrivalWomen";
+import ProductPageWomen from "./pages/ProductPageWomen";
+import ProductPageMen from "./pages/ProductPageMen";
 import Checkout from "./pages/Checkout";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
-    errorElement: <ErrorElement/>,
+    errorElement: <ErrorElement />,
     children: [
       {
         element: <WomenPage />,
@@ -21,13 +22,22 @@ const router = createBrowserRouter([
         element: <MenPage />,
       },
       {
-        path: "/new-arrivals",
-        element: <NewArrivalWomen />
+        path: "/product",
+        children: [
+          {
+            element: <ProductPageWomen />,
+            path: "/product/women",
+          },
+          {
+            element: <ProductPageMen />,
+            path: "/product/men",
+          },
+        ],
       },
       {
         path: "/checkout",
-        element: <Checkout />
-      }
+        element: <Checkout />,
+      },
     ],
   },
 ]);
