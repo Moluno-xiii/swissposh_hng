@@ -40,10 +40,9 @@ export default function Header() {
         </div>
         <div className="flex flex-row gap-x-3">
           <GrFavorite />
-<NavLink to='/checkout'>
-<PiShoppingBag />
-</NavLink>
-          
+          <NavLink to="/cart">
+            <PiShoppingBag />
+          </NavLink>
         </div>
       </nav>
       {isOpen && <Modal onClose={handleCloseModal} />}
