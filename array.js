@@ -20,7 +20,7 @@ const womenProductsArray = [
         productId : 3
 
     },
-    
+
     {
         productName: "Overized denim shirt",
         imageUrl : "/product_4.png",
@@ -152,7 +152,7 @@ const menProductsArray = [
     {
         productName: "Overized denim shirt",
         imageUrl : "/product_10_men.png",
-        largeImageUrl: "/product_10_large_men.jpg",
+        largeImageUrl: "/public/product_10_large_men.png",
         productId : 10
 
     },

@@ -1,11 +1,12 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import WomenPage from "./pages/WomenPage";
 import MenPage from "./pages/MenPage";
 import Home from "./pages/Home";
 import ErrorElement from "./components/ErrorElement";
 import ProductPageWomen from "./pages/ProductPageWomen";
-import ProductPageMen from "./pages/ProductPageMen";
 import Checkout from "./pages/Checkout";
+import MenPageDetails from "./pages/MenPageDetails";
+import ProductPageMen from "./pages/ProductPageMen";
+import WomenPageDetails from "./pages/WomenPageDetails";
 
 const router = createBrowserRouter([
   {
@@ -14,28 +15,33 @@ const router = createBrowserRouter([
     errorElement: <ErrorElement />,
     children: [
       {
-        element: <WomenPage />,
         index: true,
+        element: <WomenPageDetails />,
       },
       {
-        path: "/men",
-        element: <MenPage />,
-      },
-      {
-        path: "/product",
+        path: "women",
         children: [
-          {
-            index: true,
-            element: <ProductPageWomen />,
-          },
-          {
-            element: <ProductPageMen />,
-            path: "/product/men",
-          },
+          { index: true, element: <WomenPageDetails /> },
+          { path: "/women/products", element: <ProductPageWomen /> },
         ],
       },
       {
-        path: "/checkout",
+        path: "men",
+        element: <MenPage />,
+        children: [
+          { index: true, element: <MenPageDetails /> },
+          { path: "/men/products", element: <ProductPageMen /> },
+        ],
+      },
+      // {
+      //   path: "product",
+      //   children: [
+      //     { index: true, element: <ProductPageWomen /> },
+      //     { path: "men", element: <ProductPageMen /> },
+      //   ],
+      // },
+      {
+        path: "checkout",
         element: <Checkout />,
       },
     ],

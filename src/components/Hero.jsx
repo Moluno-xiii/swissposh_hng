@@ -1,17 +1,9 @@
 /* eslint-disable react/prop-types */
 import { NavLink } from "react-router-dom";
 
-const Hero = ({alt, image1, image1_large, href}) => {
+const Hero = ({ alt, image1, image1_large, href }) => {
   return (
     <>
-      <div className="flex flex-row">
-        <div className="flex h-[43px] flex-1 items-center justify-center bg-black text-xxs font-bold uppercase leading-[10.8px] text-white md:h-[55px] md:text-xs">
-          up to 50% off fresh finds
-        </div>
-        <div className="flex h-[43px] flex-1 items-center justify-center bg-white text-xxs font-bold uppercase leading-[10.8px] text-[#001F3FB2] md:h-[55px] md:text-xs">
-          Free worldwide delivery
-        </div>
-      </div>
       <div className="flex h-[75px] flex-col items-center justify-center gap-y-[6px] bg-primary text-center text-white md:h-[104px]">
         <p className="h-[16px] text-sm font-bold uppercase leading-[16.2px] md:mb-3 md:text-lg">
           up to 50% off fresh finds
@@ -21,12 +13,7 @@ const Hero = ({alt, image1, image1_large, href}) => {
         </p>
       </div>
       <div className="relative flex justify-center bg-white">
-        <img
-          src={image1}
-          alt="image of a female model"
-          height={70}
-          className="w-full md:hidden"
-        />
+        <img src={image1} alt={alt} height={70} className="w-full md:hidden" />
         <img
           src={image1_large}
           alt={alt}

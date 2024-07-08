@@ -7,7 +7,7 @@ const Modal = ({ onClose }) => {
         <div className="flex flex-row gap-x-4">
           <span onClick={onClose} className="mb-10 font-black leading-[21.6px]">
             <NavLink
-              to="/"
+              to="/women"
               className={({ isActive }) =>
                 isActive ? "text-[#F20000]" : "text-White"
               }
