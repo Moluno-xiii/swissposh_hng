@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 const SmallScreensNav = ({handleOpenModal}) => {
   return (
-    <nav className="flex h-[52px] flex-row items-center justify-between bg-black px-4 md:hidden">
+    <nav className="flex h-[52px] fixed right-0 left-0 z-20 flex-row items-center justify-between bg-black px-4 md:hidden">
       <div className="flex flex-row gap-x-2">
         <img
           src="/hamburger.svg"
