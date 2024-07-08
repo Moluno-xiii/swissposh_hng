@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 const CartOrderSummary = () => {
   return (
     <div className="flex h-[489px] w-[323px] flex-col bg-primary bg-opacity-[12%] p-[17.21px] text-[9.83px] font-medium leading-[13.27px] text-primary text-opacity-80 md:h-[597px] md:w-[404px] md:bg-opacity-[9%] md:p-5 md:text-xs md:leading-[16.2px]">
@@ -30,7 +32,9 @@ const CartOrderSummary = () => {
       </div>
 
       <button className="mx-auto max-md:mt-2 h-[33.59px] w-[231.04px] bg-primary text-white max-md:text-[11.47px] max-md:leading-[15.48px] md:h-[41px] md:w-[282px]">
+        <NavLink to="/checkout" >
         Proceed to Checkout
+        </NavLink>
       </button>
     </div>
   );

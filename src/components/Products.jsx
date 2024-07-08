@@ -1,9 +1,12 @@
 /* eslint-disable react/prop-types */
 
+import { useNavigate } from "react-router-dom";
+
 const Products = ({ product }) => {
   const { imageUrl, productName, largeImageUrl } = product;
+  const navigate = useNavigate()
   return (
-    <div className="flex max-h-[285px] max-w-[161px] flex-col md:max-h-[502px] md:max-w-[232px]">
+    <div className="flex max-h-[285px] max-w-[161px] flex-col md:max-h-[502px] md:max-w-[232px]" onClick={() => navigate("/shopping-bag")}>
       <img
         src={imageUrl}
         alt="image of the product"

@@ -15,7 +15,7 @@ const SmallScreensNav = ({handleOpenModal}) => {
       </div>
       <div className="flex flex-row gap-x-3">
         <GrFavorite />
-        <NavLink to="/cart">
+        <NavLink to="/shopping-bag">
           <PiShoppingBag />
         </NavLink>
       </div>

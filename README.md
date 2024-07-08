@@ -3,8 +3,10 @@ This is a completely static website with functional routing
 
 ## Available routes
 - /men
-- /product
-- /product/men
+- /women
+- /men/products
+- /women/products
+- /shopping-bag
 - /checkout
 - 404 page
 
