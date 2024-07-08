@@ -17,7 +17,7 @@ const SecondImagesSection = ({href, alt, image6, image_6_large, image7, image_7_
             className="hidden h-full md:inline-block"
           />
         </div>
-        <div className="absolute bottom-0 mb-5 flex h-[107px] w-[100vw] flex-col items-center justify-center bg-transparent bg-opacity-[62%] text-white md:text-xs">
+        <div className="absolute bottom-0 mb-5 flex h-[107px] w-full flex-col items-center justify-center bg-transparent bg-opacity-[62%] text-white md:text-xs">
           <span className="text-[7.63px] font-medium uppercase leading-[10.3px]">
             Dazzling adornments
           </span>

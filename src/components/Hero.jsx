@@ -31,7 +31,7 @@ const Hero = ({alt, image1, image1_large, href}) => {
           src={image1_large}
           alt={alt}
           height={702}
-          className="hidden w-[100vw] md:inline-block"
+          className="hidden w-full md:inline-block"
         />
         <div className="absolute bottom-0 flex h-[107px] w-full flex-col items-center justify-center bg-primary bg-opacity-[62%] text-white md:h-[148px]">
           <span className="text-[7.63px] font-medium uppercase leading-[10.3px] md:text-xs">

@@ -5,15 +5,29 @@ const Modal = ({ onClose }) => {
     <ul className="fixed inset-0 z-50 gap-y-4 bg-primary px-4 py-6 uppercase text-white md:hidden">
       <div className="flex flex-row justify-between text-base">
         <div className="flex flex-row gap-x-4">
-          <span onClick={onClose} className="mb-10 font-black leading-[21.6px] text-[#F20000]">
-            <NavLink to="/">Women</NavLink>
+          <span onClick={onClose} className="mb-10 font-black leading-[21.6px]">
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                isActive ? "text-[#F20000]" : "text-White"
+              }
+            >
+              Women
+            </NavLink>
           </span>
           <span onClick={onClose} className="mb-10 font-black leading-[21.6px]">
-            <NavLink to="/men">Men</NavLink>
+            <NavLink
+              to="/men"
+              className={({ isActive }) =>
+                isActive ? "text-[#F20000]" : "text-White"
+              }
+            >
+              Men
+            </NavLink>
           </span>
         </div>
         <span className="mb-10 font-black leading-[21.6px]" onClick={onClose}>
-          X
+          <img src="/close_icon.svg" alt="close icon" />
         </span>
       </div>
       <li
