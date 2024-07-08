@@ -2,7 +2,6 @@ import Modal from "./Modal";
 import LargeScreensNav from "./LargeScreensNav";
 import SmallScreensNav from "./SmallScreensNav";
 import { useState } from "react";
-import SecondaryNav from "./SecondaryNav";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,7 +17,7 @@ export default function Header() {
       <LargeScreensNav />
       <SmallScreensNav handleOpenModal={handleOpenModal} />
       {isOpen && <Modal onClose={handleCloseModal} />}
-      <SecondaryNav />
+      {/* <SecondaryNav /> */}
     </header>
   );
 }

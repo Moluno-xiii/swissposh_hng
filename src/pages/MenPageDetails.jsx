@@ -1,9 +1,11 @@
 import HeroSection from "../components/Hero";
 import FirstImagesSection from "../components/FirstImagesSection";
 import SecondImagesSection from "../components/SecondImagesSection";
+import SecondaryNav from "../components/SecondaryNav";
 export default function MenPageDetails() {
   return (
     <div className="">
+      <SecondaryNav text={"men"} href="/men" />
       <HeroSection
         alt="image of a male model"
         image1="/man_1.png"
