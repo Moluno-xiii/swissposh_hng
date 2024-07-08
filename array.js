@@ -179,7 +179,8 @@ const cartImagesArray = [
     size: "S",
     color: "brown",
     price : "$300.00",
-    largeImageUrl: "cart_image_1_large.jpg"
+    largeScreensImageUrl: "cart_image_1_large.jpg",
+    smallScreensImageUrl:"/cart_image_1.jpg"
   },
   {
     title: "Member get 20% off every item",
@@ -187,7 +188,8 @@ const cartImagesArray = [
     size: "S",
     color: "brown",
     price : "$300.00",
-    largeImageUrl: "cart_image_2_large.jpg"
+    largeScreensImageUrl: "cart_image_2_large.jpg",
+    smallScreensImageUrl:"/cart_image_2.jpg"
   },
   {
     title: "Member get 20% off every item",
@@ -195,7 +197,8 @@ const cartImagesArray = [
     size: "S",
     color: "brown",
     price : "$300.00",
-    largeImageUrl: "cart_image_3_large.jpg"
+    largeScreensImageUrl: "cart_image_3_large.jpg",
+    smallScreensImageUrl:"/cart_image_3.jpg"
   },
   {
     title: "Member get 20% off every item",
@@ -203,7 +206,8 @@ const cartImagesArray = [
     size: "S",
     color: "brown",
     price : "$300.00",
-    largeImageUrl: "cart_image_4_large.jpg"
+    largeScreensImageUrl: "cart_image_4_large.jpg",
+    smallScreensImageUrl:"/cart_image_4.jpg"
   },
 ];
 
