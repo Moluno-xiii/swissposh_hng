@@ -152,7 +152,7 @@ const menProductsArray = [
     {
         productName: "Overized denim shirt",
         imageUrl : "/product_10_men.png",
-        largeImageUrl: "/public/product_10_large_men.png",
+        largeImageUrl: "/product_10_large_men.png",
         productId : 10
 
     },
@@ -172,4 +172,39 @@ const menProductsArray = [
     },
 ]
 
-export {womenProductsArray, menProductsArray}
+const cartImagesArray = [
+  {
+    title: "Member get 20% off every item",
+    id: 116673345290,
+    size: "S",
+    color: "brown",
+    price : "$300.00",
+    largeImageUrl: "cart_image_1_large.jpg"
+  },
+  {
+    title: "Member get 20% off every item",
+    id: 116673345290,
+    size: "S",
+    color: "brown",
+    price : "$300.00",
+    largeImageUrl: "cart_image_2_large.jpg"
+  },
+  {
+    title: "Member get 20% off every item",
+    id: 116673345290,
+    size: "S",
+    color: "brown",
+    price : "$300.00",
+    largeImageUrl: "cart_image_3_large.jpg"
+  },
+  {
+    title: "Member get 20% off every item",
+    id: 116673345290,
+    size: "S",
+    color: "brown",
+    price : "$300.00",
+    largeImageUrl: "cart_image_4_large.jpg"
+  },
+];
+
+export {womenProductsArray, menProductsArray, cartImagesArray}

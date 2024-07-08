@@ -5,7 +5,7 @@ const ProductFooter = () => {
         Showing 12 of 1020
       </span>
       <img
-        src="/public/loading-bar.svg"
+        src="/loading-bar.svg"
         alt="loader indicator"
         className="h-[3.37px] max-md:w-[155px] md:h-[5px]"
       />

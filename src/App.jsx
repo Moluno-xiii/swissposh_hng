@@ -7,6 +7,7 @@ import Checkout from "./pages/Checkout";
 import MenPageDetails from "./pages/MenPageDetails";
 import ProductPageMen from "./pages/ProductPageMen";
 import WomenPageDetails from "./pages/WomenPageDetails";
+import ShoppingBag from "./pages/ShoppingBag";
 
 const router = createBrowserRouter([
   {
@@ -33,16 +34,13 @@ const router = createBrowserRouter([
           { path: "/men/products", element: <ProductPageMen /> },
         ],
       },
-      // {
-      //   path: "product",
-      //   children: [
-      //     { index: true, element: <ProductPageWomen /> },
-      //     { path: "men", element: <ProductPageMen /> },
-      //   ],
-      // },
       {
         path: "checkout",
         element: <Checkout />,
+      },
+      {
+        path: "cart",
+        element: <ShoppingBag />,
       },
     ],
   },
@@ -50,7 +48,6 @@ const router = createBrowserRouter([
 
 const App = () => {
   return <RouterProvider router={router} />;
-  // return <p className="uppercase text-red-400 font-bold underline text-5xl">this is a dog</p>;
 };
 
 export default App;
