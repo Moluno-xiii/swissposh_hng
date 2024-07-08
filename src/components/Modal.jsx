@@ -6,10 +6,10 @@ const Modal = ({ onClose }) => {
       <div className="flex flex-row justify-between text-base">
         <div className="flex flex-row gap-x-4">
           <span onClick={onClose} className="mb-10 font-black leading-[21.6px] text-[#F20000]">
-            <NavLink to="/product/women">Women</NavLink>
+            <NavLink to="/">Women</NavLink>
           </span>
           <span onClick={onClose} className="mb-10 font-black leading-[21.6px]">
-            <NavLink to="/product/men">Men</NavLink>
+            <NavLink to="/men">Men</NavLink>
           </span>
         </div>
         <span className="mb-10 font-black leading-[21.6px]" onClick={onClose}>

@@ -8,11 +8,11 @@ export default function WomenPage() {
         alt="image of a female model"
         image1="/woman_1.png"
         image1_large="/woman_1_large.svg"
-        href="product/women"
+        href="product"
       />
 
       <FirstImagesSection
-        href="product/women"
+        href="product"
         alt="image of a female model"
         image_2_large="/woman_2_large.png"
         image2="/woman_2.png"
@@ -35,7 +35,7 @@ export default function WomenPage() {
 
       <SecondImagesSection
         alt="image of a female model"
-        href="product/women"
+        href="product"
         image6="/woman_6.png"
         image_6_large="/woman_6_large.png"
         image7="/woman_7.png"

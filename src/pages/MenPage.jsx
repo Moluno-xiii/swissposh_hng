@@ -8,11 +8,11 @@ export default function MenPage() {
         alt="image of a male model"
         image1="/man_1.png"
         image1_large="/man_1_large.svg"
-        href="product/men"
+        href="/product/men"
       />
 
       <FirstImagesSection
-        href="product/men"
+        href="/product/men"
         alt="image of a male model"
         image_2_large="/man_2_large.png"
         image2="/man_2.png"
@@ -35,7 +35,7 @@ export default function MenPage() {
 
       <SecondImagesSection
         alt="image of a male model"
-        href="product/men"
+        href="/product/men"
         image6="/man_6.png"
         image_6_large="/man_6_large.png"
         image7="/man_7.png"

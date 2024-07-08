@@ -33,7 +33,7 @@ const Hero = ({alt, image1, image1_large, href}) => {
           height={702}
           className="hidden w-[100vw] md:inline-block"
         />
-        <div className="absolute bottom-0 flex h-[107px] w-[100vw] flex-col items-center justify-center bg-primary bg-opacity-[62%] text-white md:h-[148px]">
+        <div className="absolute bottom-0 flex h-[107px] w-full flex-col items-center justify-center bg-primary bg-opacity-[62%] text-white md:h-[148px]">
           <span className="text-[7.63px] font-medium uppercase leading-[10.3px] md:text-xs">
             new arrivals
           </span>
