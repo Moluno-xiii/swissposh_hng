@@ -25,8 +25,7 @@ const CheckoutOrderInformation = () => {
         </div>
         <span className="py-4 text-[10px] leading-6 max-md:text-center md:text-xs">
           By continuing, you agree to SWISSPOSH General Terms and Conditions. We
-          will process your personal data in accordance with the H&Ms Privacy
-          Notice.
+          will process your personal data in accordance with the SWISSPOSH Privacy Notice.
         </span>
         <button className="mx-auto flex h-[38px] w-[249px] items-center justify-center bg-[#E4E4E4] text-xs md:w-[403px]">
           Proceed to Payment
