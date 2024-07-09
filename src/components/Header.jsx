@@ -17,7 +17,6 @@ export default function Header() {
       <LargeScreensNav />
       <SmallScreensNav handleOpenModal={handleOpenModal} />
       {isOpen && <Modal onClose={handleCloseModal} />}
-      {/* <SecondaryNav /> */}
     </header>
   );
 }

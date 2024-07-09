@@ -14,7 +14,7 @@ const LargeScreensNav = () => {
         <li className="">Sign in</li>
         <li className="cursor-pointer">Favourites (0)</li>
         <li className="cursor-pointer">
-          <NavLink to="shopping-bag">Shopping Bag</NavLink>
+          <NavLink to="shopping-bag">Cart</NavLink>
         </li>
       </ul>
     </nav>

@@ -2,10 +2,7 @@ const ProductHeader = () => {
   return (
     <>
       <ul className="md:flex hidden h-[55px] items-center justify-center gap-x-[37px] bg-primary text-sm font-medium leading-[18.9px] text-white md:text-xs">
-        <li className="border-b-2">New Arrivals</li>
-        {/* <li className="max-md:font-bold max-md:uppercase md:border-b-2">
-          New Arrivals
-        </li> */}
+        <li className="border-b-2 pb-1">New Arrivals</li>
         <li className="">Trending Now</li>
         <li className="">Shop by Occasion</li>
         <li className="">Shop by Product</li>

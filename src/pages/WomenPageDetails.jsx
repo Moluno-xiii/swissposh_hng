@@ -5,14 +5,13 @@ import SecondaryNav from "../components/SecondaryNav";
 export default function WomenPageDetails() {
   return (
     <div className="">
-      <SecondaryNav text={"women"} href="/women" />
+      <SecondaryNav href={"/women"} text={"women"} />
       <HeroSection
         alt="image of a female model"
         image1="/woman_1.png"
         image1_large="/woman_1_large.svg"
         href="/women/products"
       />
-
       <FirstImagesSection
         href="/women/products"
         alt="image of a female model"
