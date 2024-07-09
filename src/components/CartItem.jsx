@@ -1,5 +1,13 @@
-import LargeScreensCartItemDetails from "./LargeScreensCartItemDetails";
-import SmallScreensCartItemDetails from "./SmallScreensCartItemDetails";
+import { Suspense, lazy } from "react";
+import Loader from "../components/Loader";
+
+const LargeScreensCartItemDetails = lazy(
+  () => import("./LargeScreensCartItemDetails"),
+);
+const SmallScreensCartItemDetails = lazy(
+  () => import("./SmallScreensCartItemDetails"),
+);
+
 /* eslint-disable react/prop-types */
 const CartItem = ({ item }) => {
   const {
@@ -27,9 +35,24 @@ const CartItem = ({ item }) => {
         width={161}
         height={217}
       />
-      <LargeScreensCartItemDetails title={title} price={price} id={id} size={size} color={color} />
-      <SmallScreensCartItemDetails title={title} price={price} id={id} size={size} color={color} />
-
+      <Suspense fallback={<Loader />}>
+        <LargeScreensCartItemDetails
+          title={title}
+          price={price}
+          id={id}
+          size={size}
+          color={color}
+        />
+      </Suspense>
+      <Suspense fallback={<Loader />}>
+        <SmallScreensCartItemDetails
+          title={title}
+          price={price}
+          id={id}
+          size={size}
+          color={color}
+        />
+      </Suspense>
     </li>
   );
 };
