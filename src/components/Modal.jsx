@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import ModalListItem from "./ModalListItem";
 // eslint-disable-next-line react/prop-types
 const Modal = ({ onClose }) => {
   return (
@@ -30,36 +31,13 @@ const Modal = ({ onClose }) => {
           <img src="/close_icon.svg" alt="close icon" />
         </span>
       </div>
-      <li
-        className="mb-5 flex flex-row items-center justify-between border-white text-[14px] font-bold leading-[18.9px] hover:border-b-2"
-        onClick={onClose}
-      >
-        <NavLink
-          to="/new-arrivals"
-          className="flex w-full flex-row items-center justify-between"
-        >
-          new arrivals
-          <img src="/right-arrow.svg" alt="right-arrow" />
-        </NavLink>{" "}
-      </li>
-      <li className="mb-5 flex flex-row items-center justify-between border-white text-[14px] font-bold leading-[18.9px] hover:border-b-2">
-        trending now <img src="/right-arrow.svg" alt="right-arrow" />
-      </li>
-      <li className="mb-5 flex flex-row items-center justify-between border-white text-[14px] font-bold leading-[18.9px] hover:border-b-2">
-        shop by occasion <img src="/right-arrow.svg" alt="right-arrow" />
-      </li>
-      <li className="mb-5 flex flex-row items-center justify-between border-white text-[14px] font-bold leading-[18.9px] hover:border-b-2">
-        shop by product <img src="/right-arrow.svg" alt="right-arrow" />
-      </li>
-      <li className="mb-5 flex flex-row items-center justify-between border-white text-[14px] font-bold leading-[18.9px] hover:border-b-2">
-        gifting <img src="/right-arrow.svg" alt="right-arrow" />
-      </li>
-      <li className="mb-5 flex flex-row items-center justify-between border-white text-[14px] font-bold leading-[18.9px] hover:border-b-2">
-        magazine <img src="/right-arrow.svg" alt="right-arrow" />
-      </li>
-      <li className="mb-5 flex flex-row items-center justify-between border-white text-[14px] font-bold leading-[18.9px] hover:border-b-2">
-        sustainability <img src="/right-arrow.svg" alt="right-arrow" />
-      </li>
+      <ModalListItem text={"new arrivals"} />
+      <ModalListItem text={"trending now"} />
+      <ModalListItem text={"shop by occasion"} />
+      <ModalListItem text={"shop by product"} />
+      <ModalListItem text={"gifting"} />
+      <ModalListItem text={"magazine"} />
+      <ModalListItem text={"sustainability"} />
     </ul>
   );
 };

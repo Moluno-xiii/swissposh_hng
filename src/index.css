@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 .loader {
-  /* width: 45px; */
   aspect-ratio: 1;
   --c:no-repeat linear-gradient(#000 0 0);
   background: 

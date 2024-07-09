@@ -3,7 +3,6 @@ import CartItem from "../components/CartItem";
 import CartOrderSummary from "../components/CartOrderSummary";
 import SecondaryNav from "../components/SecondaryNav";
 
-
 const ShoppingBag = () => {
   return (
     <>
@@ -15,7 +14,6 @@ const ShoppingBag = () => {
         <div className="flex flex-col gap-6 max-lg:items-center max-md:px-4 lg:flex-row lg:justify-center">
           <ul className="flex w-[323px] flex-col gap-y-3 md:w-[576px]">
             {cartImagesArray.map((item, index) => (
-              
               <CartItem item={item} key={index} />
             ))}
           </ul>

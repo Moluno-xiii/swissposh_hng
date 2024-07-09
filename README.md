@@ -6,7 +6,7 @@ This is a completely static website with functional routing
 - /women
 - /men/products
 - /women/products
-- /shopping-bag
+- /cart
 - /checkout
 - 404 page
 

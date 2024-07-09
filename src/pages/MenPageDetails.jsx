@@ -1,6 +1,4 @@
 import HeroSection from "../components/Hero";
-// import FirstImagesSection from "../components/FirstImagesSection";
-// import SecondImagesSection from "../components/SecondImagesSection";
 import SecondaryNav from "../components/SecondaryNav";
 import PageAd from "../components/PageAd";
 import { Suspense, lazy } from "react";
