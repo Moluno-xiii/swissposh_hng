@@ -1,7 +1,7 @@
 const CheckoutPersonalInformation = () => {
   return (
     <div className="w-[327px] md:w-[680px]">
-      <div className="flex h-[46px] flex-row items-center justify-start bg-primary px-4 text-xs uppercase text-white md:px-6">
+      <div className="flex h-[46px] flex-row items-center justify-start bg-black px-4 text-[10px] uppercase leading-[13.5px] text-white md:px-6 md:text-xs md:leading-[16.2px]">
         Your information
       </div>
       <form
@@ -54,7 +54,9 @@ const CheckoutPersonalInformation = () => {
         </div>
         <div>
           <input type="checkbox" className="mr-2 accent-black" checked={true} />
-          <span>Wakaoluuwajuwon@watlook.com</span>
+          <span className="font-medium leading-[16.2px] text-xs">
+            Wakaoluuwajuwon@watlook.com
+          </span>
         </div>
       </form>
     </div>
