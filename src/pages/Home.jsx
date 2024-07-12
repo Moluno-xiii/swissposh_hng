@@ -22,6 +22,7 @@ const fetchData2 = async () => {
     console.error("Error fetching data:", error);
   }
 };
+fetchData2()
 
 function Home() {
 
