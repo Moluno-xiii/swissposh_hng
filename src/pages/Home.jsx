@@ -1,5 +1,6 @@
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import MobileFooterNavbar from "../components/MobileFooterNavbar";
 
 
 import { Outlet } from "react-router-dom";
@@ -32,6 +33,7 @@ function Home() {
       <div className="mt-[52px] md:mt-[70px]">
       <Outlet />
       </div>
+      <MobileFooterNavbar />
       <Footer />
     </div>
   );
