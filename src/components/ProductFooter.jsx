@@ -7,13 +7,24 @@ const ProductFooter = ({ progress, currentNumber, switchPage }) => {
       </span>
       <progress value={progress} max={1} className="" />
       <ul className="flex flex-row gap-3 text-[8.09px] md:text-xs">
-        <li className="hover:underline" onClick={() => switchPage(1, 10, 0.3)}>
+        <li
+          className="cursor-pointer hover:underline"
+          onClick={() => switchPage(1, 10, 0.3)}
+        >
           1
         </li>
-        <li className="hover:underline" onClick={() => switchPage(2, 20, 0.6)}>
+        <li
+          className="cursor-pointer hover:underline"
+          onClick={() => switchPage(2, 20, 0.6)}
+        >
           2
         </li>
-        <li className="hover:underline">3</li>
+        <li
+          className="cursor-pointer hover:underline"
+          onClick={() => switchPage(3, 30, 1)}
+        >
+          3
+        </li>
       </ul>
     </div>
   );

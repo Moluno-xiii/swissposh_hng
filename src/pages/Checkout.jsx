@@ -1,6 +1,7 @@
 import CheckoutPersonalInformation from "../components/CheckoutPersonalInformation";
 import CheckoutOrderInformation from "../components/CheckoutOrderInformation";
 
+
 const Checkout = () => {
   return (
     <>

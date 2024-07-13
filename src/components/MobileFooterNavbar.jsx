@@ -6,7 +6,7 @@ const MobileFooterNavbar = () => {
     <nav className="fixed bottom-[5px] left-2 z-40 w-[95vw] sm:hidden">
       <ul className="flex w-full flex-row justify-between rounded-lg bg-black px-4 py-2">
         <li className="flex flex-col gap-y-1 text-white">
-          <NavLink to="">
+          <NavLink to="/">
             <CiSearch className="h-[20px] w-[22px]" />
             <span className="text-[10px] font-medium leading-[11.68px]">
               explore
@@ -14,7 +14,7 @@ const MobileFooterNavbar = () => {
           </NavLink>
         </li>
         <li className="flex flex-col gap-y-1 text-white">
-          <NavLink to="">
+          <NavLink to="#">
             <img src="/favourite.svg" alt="favourites icon" />
             <span className="text-[10px] font-medium leading-[11.68px]">
               favourite
@@ -35,7 +35,7 @@ const MobileFooterNavbar = () => {
           </NavLink>
         </li>
         <li className="flex flex-col gap-y-1 text-white">
-          <NavLink to="">
+          <NavLink to="#">
             <img src="/hands_icon.svg" alt="fresh finds icon" />
             <span className="text-[10px] font-medium leading-[11.68px]">
               fresh finds
@@ -43,7 +43,7 @@ const MobileFooterNavbar = () => {
           </NavLink>
         </li>
         <li className="flex flex-col gap-y-1 text-white">
-          <NavLink to="">
+          <NavLink to="#">
             <img src="/profile_icon.svg" alt="profile icon" />
             <span className="text-[10px] font-medium leading-[11.68px]">
               profile

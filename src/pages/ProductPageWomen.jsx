@@ -11,7 +11,6 @@ import Loader from "../components/Loader";
 const ProductDetails = lazy(() => import("../components/ProductDetails"));
 
 const ProductPageWomen = () => {
-  //  const data = useLoaderData();
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);

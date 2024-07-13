@@ -3,6 +3,7 @@ import CartOrderSummary from "../components/CartOrderSummary";
 import SecondaryNav from "../components/SecondaryNav";
 import { useDispatch, useSelector } from "react-redux";
 import { clearCart } from "../store/women/womenSlice";
+import { selectCartTotal } from "../store/women/womenSlice";
 
 const ShoppingBag = () => {
   const cart = useSelector((state) => state.women.cart);
@@ -10,6 +11,13 @@ const ShoppingBag = () => {
   const handleClearCart = () => {
     dispatch(clearCart());
   };
+
+     const total = useSelector(selectCartTotal);
+
+     if (total <= 0)
+       return (
+         <div className="mx-auto h-[100dvh] w-[300px] md:text-2xl mt-10 capitalize font-bold">your cart is empty</div>
+       );
   return (
     <>
       <SecondaryNav href={"/women"} text={"women"} />

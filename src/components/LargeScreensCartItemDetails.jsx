@@ -1,8 +1,9 @@
 /* eslint-disable react/prop-types */
 import { useDispatch } from "react-redux";
 import { setQuantity } from "../store/women/womenSlice";
-import { clearItem, clearCart } from "../store/women/womenSlice";
+import { clearItem } from "../store/women/womenSlice";
 import { FiTrash2 } from "react-icons/fi";
+import formatCurrency from "../utils/formatCurrency";
 
 
 const LargeScreensCartItemDetails = ({
@@ -44,7 +45,7 @@ const LargeScreensCartItemDetails = ({
           />
         </span>
       </p>
-      <span className="md:text-xs md:leading-[16.2px]">${price}</span>
+      <span className="md:text-xs md:leading-[16.2px]">{formatCurrency(price)}</span>
       <ul className="mt-2 flex flex-row justify-between gap-x-2 text-[10px] capitalize leading-[13.5px]">
         <li>Art No :</li>
         <li>{id}</li>
@@ -57,7 +58,7 @@ const LargeScreensCartItemDetails = ({
         <li>Color</li>
         <li>{color}</li>
         <li>total</li>
-        <li className="font-bold">${quantity * price}</li>
+        <li className="font-bold">{formatCurrency(quantity * price)}</li>
       </ul>
 
       <div className="flex flex-row gap-x-2">

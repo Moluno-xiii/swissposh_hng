@@ -48,7 +48,7 @@ const ProductDescriptionSection = ({ item }) => {
       <span>Color : {item?.extra_infos[0].value}</span>
       <p className="
       flex flex-col mb-4 gap-y-2 items-center text-3xl font-bold">
-        Description <span className="text-2xl font-normal">{item?.description}</span>
+        Description <span className="text-lg font-normal">{item?.description}</span>
       </p>
       {quantity === 0 ? (
         <button

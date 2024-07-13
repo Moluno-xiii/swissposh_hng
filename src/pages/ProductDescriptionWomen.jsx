@@ -10,8 +10,8 @@ import ProductDescriptionSection from "../components/ProductDescriptionSectionWo
 const ProductDescription = () => {
   const item = useLoaderData()
   return (
-    <div className="mx-auto my-5 flex max-w-[1346px] flex-row gap-x-4">
-      <Suspense fallback={<Loader />}>
+    <div className="mx-auto my-5 flex max-w-[1346px] md:flex-row flex-col gap-x-4">
+      <Suspense fallback={<Loader />} >
         <ProductDescriptionImagesSection item={item} />
       </Suspense>
       <ProductDescriptionSection item={item} />

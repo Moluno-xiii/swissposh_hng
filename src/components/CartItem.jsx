@@ -19,7 +19,6 @@ const CartItem = ({ item }) => {
     price,
     color,
     size,
-    smallScreensImageUrl,
     quantity,
     imageUrl,
     available_quantity
@@ -37,7 +36,7 @@ const CartItem = ({ item }) => {
         height={149}
       />
       <img
-        src={smallScreensImageUrl}
+        src={imageUrl}
         alt="image of item"
         className="mx-auto inline-block md:hidden"
         width={161}
