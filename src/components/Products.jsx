@@ -11,11 +11,13 @@ const Products = ({ product }) => {
         src={imageUrl}
         alt="image of the product"
         className="inline-block md:hidden"
+        onClick={() => navigate("/product-description")}
       />
       <img
         src={largeImageUrl}
         alt="image of the product"
         className="hidden md:inline-block"
+        onClick={() => navigate("/product-description")}
       />
       <div className="flex h-[68px] flex-row items-center justify-between bg-white px-2">
         <div className="flex flex-col justify-center gap-y-1 md:gap-y-2">

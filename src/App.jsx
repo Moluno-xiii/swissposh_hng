@@ -8,6 +8,7 @@ import MenPageDetails from "./pages/MenPageDetails";
 import ProductPageMen from "./pages/ProductPageMen";
 import WomenPageDetails from "./pages/WomenPageDetails";
 import ShoppingBag from "./pages/ShoppingBag";
+import ProductDescription from "./pages/ProductDescription";
 
 const router = createBrowserRouter([
   {
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
       {
         path: "shopping-bag",
         element: <ShoppingBag />,
+      },
+      {
+        path: "product-description",
+        element: <ProductDescription />,
       },
     ],
   },
