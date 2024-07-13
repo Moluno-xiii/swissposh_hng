@@ -22,3 +22,42 @@
  66.67% {background-size:20% 50%, 20% 50%, 20% 30%, 20% 30%, 20% 30%, 20% 30%}
  83.33% {background-size:20% 50%, 20% 50%, 20% 50%, 20% 50%, 20% 30%, 20% 30%}
 }
+
+ .dots-3 {
+    width: 60px;
+    aspect-ratio: 2;
+    --_g: no-repeat radial-gradient(circle closest-side, #001f3f 90%, #00000000);
+    background:
+      var(--_g) 0% 50%,
+      var(--_g) 50% 50%,
+      var(--_g) 100% 50%;
+    background-size: calc(100% / 3) 50%;
+    animation: d3 1s infinite linear;
+  }
+
+  @keyframes d3 {
+    20% {
+      background-position:
+        0% 0%,
+        50% 50%,
+        100% 50%;
+    }
+    40% {
+      background-position:
+        0% 100%,
+        50% 0%,
+        100% 50%;
+    }
+    60% {
+      background-position:
+        0% 50%,
+        50% 100%,
+        100% 0%;
+    }
+    80% {
+      background-position:
+        0% 50%,
+        50% 50%,
+        100% 100%;
+    }
+  }

@@ -18,6 +18,7 @@ const CartItem = ({ item }) => {
     size,
     largeScreensImageUrl,
     smallScreensImageUrl,
+    quantity
   } = item;
   return (
     <li className="flex h-[456px] flex-col gap-x-3 bg-[#E8EBEE] p-4 text-primary text-opacity-80 md:h-[187px] md:flex-row md:bg-primary md:bg-opacity-[9%] md:p-5">
@@ -42,6 +43,7 @@ const CartItem = ({ item }) => {
           id={id}
           size={size}
           color={color}
+          quantity={quantity}
         />
       </Suspense>
       <Suspense fallback={<Loader />}>

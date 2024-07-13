@@ -1,5 +1,6 @@
 import { Suspense, lazy } from "react";
 import Loader from "../components/Loader";
+import { useLoaderData } from "react-router-dom";
 
 const ProductDescriptionImagesSection = lazy(
   () => import("../components/ProductDescriptionImagesSection"),
@@ -7,12 +8,13 @@ const ProductDescriptionImagesSection = lazy(
 import ProductDescriptionSection from "../components/ProductDescriptionSection";
 
 const ProductDescription = () => {
+  const item = useLoaderData()
   return (
     <div className="mx-auto flex max-w-[1346px] flex-row gap-x-4">
       <Suspense fallback={<Loader />}>
-        <ProductDescriptionImagesSection />
+        <ProductDescriptionImagesSection item={item} />
       </Suspense>
-      <ProductDescriptionSection />
+      <ProductDescriptionSection item={item} />
     </div>
   );
 };

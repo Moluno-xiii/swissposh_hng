@@ -1,21 +1,23 @@
 /* eslint-disable react/prop-types */
 
-const LargeScreensCartItemDetails = ({title, price, id, size, color, }) => {
+const LargeScreensCartItemDetails = ({title, price, id, size, color, quantity }) => {
   return (
     <div className="hidden flex-col gap-y-2 md:flex">
       <p className="text-xs font-medium capitalize leading-[16.2px]">{title}</p>
-      <span className="md:text-xs md:leading-[16.2px]">{price}</span>
-      <ul className="mt-2 flex flex-row justify-between text-[10px] capitalize leading-[13.5px]">
-        <li>Art No</li>
+      <span className="md:text-xs md:leading-[16.2px]">${price}</span>
+      <ul className="mt-2 flex flex-row justify-between text-[10px] capitalize leading-[13.5px] gap-x-2">
+        <li>Art No :</li>
         <li>{id}</li>
         <li>Size</li>
         <li>{size}</li>
+    <li>quantity</li>
+    <li>{quantity}</li>
       </ul>
       <ul className="mb-3 flex flex-row justify-between text-[10px] capitalize leading-[13.5px]">
         <li>Color</li>
         <li>{color}</li>
         <li>total</li>
-        <li className="font-bold">{price}</li>
+        <li className="font-bold">${quantity * price}</li>
       </ul>
 
       <div className="flex flex-row gap-x-2">

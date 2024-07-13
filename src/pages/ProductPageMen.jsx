@@ -17,7 +17,7 @@ const ProductPageMen = () => {
       <ProductHeader />
       <ProductFilters />
       <Suspense fallback={<Loader />}>
-        <ProductDetails mappedArray={menProductsArray} />
+        <ProductDetails mappedArray={menProductsArray} route={"/men/products/"} />
       </Suspense>
       <ProductFooter />
     </div>

@@ -2,7 +2,11 @@
 
 import { useNavigate } from "react-router-dom";
 
-const Products = ({ product }) => {
+// const dummyId = "0617d4bcae974fb38ffc4a3361979182";
+// const dummyId = "888b692bad7d47f881cd6a79f077589d";
+const dummyId = "8d7878b38f164498a6b5a7d291b82149";
+
+const Products = ({ product, route }) => {
   const { imageUrl, productName, largeImageUrl } = product;
   const navigate = useNavigate()
   return (
@@ -11,13 +15,13 @@ const Products = ({ product }) => {
         src={imageUrl}
         alt="image of the product"
         className="inline-block md:hidden"
-        onClick={() => navigate("/product-description")}
+        onClick={() => navigate(`${route}${dummyId}`)}
       />
       <img
         src={largeImageUrl}
         alt="image of the product"
         className="hidden md:inline-block"
-        onClick={() => navigate("/product-description")}
+        onClick={() => navigate(`${route}${dummyId}`)}
       />
       <div className="flex h-[68px] flex-row items-center justify-between bg-white px-2">
         <div className="flex flex-col justify-center gap-y-1 md:gap-y-2">
