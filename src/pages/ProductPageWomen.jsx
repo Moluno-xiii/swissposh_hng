@@ -3,15 +3,49 @@ import ProductFilters from "../components/ProductFilters";
 import ProductFooter from "../components/ProductFooter";
 import SecondaryNav from "../components/SecondaryNav";
 import DiscountHeader from "../components/DiscountHeader";
-import { useLoaderData } from "react-router-dom";
-
+import { useState, useEffect } from "react";
+import Spinner from "../components/Spinner";
 import { Suspense, lazy } from "react";
 import Loader from "../components/Loader";
 
 const ProductDetails = lazy(() => import("../components/ProductDetails"));
 
 const ProductPageWomen = () => {
-   const data = useLoaderData();
+  //  const data = useLoaderData();
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [page, setPage] = useState(1);
+  const [progress, setProgress] = useState(0.3);
+  const [currentNumber, setCurrentNumber] = useState(10);
+  const switchPage = (value, newNumber, newProgress) => {
+    setPage(value);
+    setCurrentNumber(newNumber);
+    setProgress(newProgress)
+  };
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+        const response = await fetch(
+          `https://reverse-proxy-tp0r.onrender.com/products?organization_id=13cad8063ba940efbccda69212e11d26&reverse_sort=false&page=${page}&size=10&Appid=3FMR5O3PRSXTMG8&Apikey=7c133f07b8864976a3095c480e82577a20240712120853424774`,
+        );
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const result = await response.json();
+        setData(result);
+      } catch (error) {
+        setError(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, [page]);
+
+  if (loading) return <Spinner />;
   return (
     <div className="bg-[#F5F5F5] md:bg-white">
       <SecondaryNav href={"/women"} text={"women"} />
@@ -19,12 +53,9 @@ const ProductPageWomen = () => {
       <ProductHeader />
       <ProductFilters />
       <Suspense fallback={<Loader />}>
-        <ProductDetails
-          mappedArray={data?.items}
-          route={`/women/products/`}
-        />
+        <ProductDetails mappedArray={data?.items} route={`/women/products/`} />
       </Suspense>
-      <ProductFooter />
+      <ProductFooter progress={progress} currentNumber={currentNumber} switchPage={switchPage} />
     </div>
   );
 };

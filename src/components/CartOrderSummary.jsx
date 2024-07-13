@@ -7,7 +7,7 @@ const CartOrderSummary = () => {
    const shipping = 100.00
     const totalWithShipping = (total + shipping).toFixed(2);
 
-   if (total <= 0) return null
+   if (total <= 0) return <div>your cart is empty</div>
   return (
     <div className="flex h-[489px] w-[323px] flex-col bg-primary bg-opacity-[12%] p-[17.21px] text-[9.83px] font-medium leading-[13.27px] text-primary text-opacity-80 md:h-[597px] md:w-[404px] md:bg-opacity-[9%] md:p-5 md:text-xs md:leading-[16.2px]">
       <p className="md:mb-2 text-[13.11px] font-bold uppercase leading-[17.7px] md:text-base md:leading-[21.6px]">

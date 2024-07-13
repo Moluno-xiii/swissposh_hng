@@ -41,7 +41,6 @@ const ProductDescriptionSection = ({ item }) => {
     <div className="flex flex-1 gap-y-1 md:gap-y-2 flex-col bg-[#f5f5f5] p-4 text-sm lg:text-2xl">
       <p className="flex flex-row justify-between text-sm font-bold md:text-3xl">
         {item.name}
-        {item.unique_id}
         <img src="/favourite.svg" alt="favourites icon" />
       </p>
       <span>Price: ${currentItemDetails.price}</span>

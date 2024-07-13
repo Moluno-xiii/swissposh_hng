@@ -1,10 +1,15 @@
 import CartItem from "../components/CartItem";
 import CartOrderSummary from "../components/CartOrderSummary";
 import SecondaryNav from "../components/SecondaryNav";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { clearCart } from "../store/women/womenSlice";
 
 const ShoppingBag = () => {
-    const cart = useSelector((state) => state.women.cart);
+  const cart = useSelector((state) => state.women.cart);
+  const dispatch = useDispatch();
+  const handleClearCart = () => {
+    dispatch(clearCart());
+  };
   return (
     <>
       <SecondaryNav href={"/women"} text={"women"} />
@@ -18,6 +23,12 @@ const ShoppingBag = () => {
               <CartItem item={item} key={index} />
             ))}
           </ul>
+         {cart.length >= 1 && <button
+            onClick={() => handleClearCart()}
+            className="rounded-md bg-red-700 px-4 py-2 text-primary transition-all duration-300 hover:bg-opacity-80"
+          >
+            Clear All Items from Cart
+          </button>}
           <CartOrderSummary />
         </div>
       </div>

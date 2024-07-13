@@ -9,8 +9,15 @@ const womenSlice = createSlice({
   initialState,
   reducers: {
     addToCart: (state, action) => {
-      const { id, price, name, imageUrl, unique_id, available_quantity, color,  } =
-        action.payload;
+      const {
+        id,
+        price,
+        name,
+        imageUrl,
+        unique_id,
+        available_quantity,
+        color,
+      } = action.payload;
       const existingItem = state.cart.find((item) => item.id === id);
       if (existingItem) {
         existingItem.quantity += 1;
@@ -24,7 +31,6 @@ const womenSlice = createSlice({
           available_quantity,
           color,
           quantity: 1,
-           
         });
       }
     },
@@ -49,6 +55,13 @@ const womenSlice = createSlice({
         item.quantity = quantity;
       }
     },
+    clearItem: (state, action) => {
+      const { id } = action.payload;
+      state.cart = state.cart.filter((item) => item.id !== id);
+    },
+    clearCart: (state) => {
+      state.cart = [];
+    },
   },
 });
 
@@ -58,5 +71,5 @@ export const selectCartTotal = (state) =>
     0,
   );
 
-export const { addToCart, increment, decrement, setQuantity } = womenSlice.actions;
+export const { addToCart, increment, decrement, setQuantity, clearCart, clearItem } = womenSlice.actions;
 export default womenSlice.reducer;
