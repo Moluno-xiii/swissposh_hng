@@ -1,13 +1,13 @@
 /* eslint-disable react/prop-types */
 import { useDispatch, useSelector } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
-import { addToCart, increment, decrement } from "../store/women/womenSlice";
+import { addToCart, increment, decrement } from "../store/men/menSlice";
 import "react-toastify/dist/ReactToastify.css";
 import formatCurrency from "../utils/formatCurrency";
 
 const ProductDescriptionSection = ({ item }) => {
   const notify = () => toast("Item added to cart!");
-  const cart = useSelector((state) => state.women.cart);
+  const cart = useSelector((state) => state.men.cart);
   const dispatch = useDispatch();
 
   const handleAddToCart = () => {
@@ -23,8 +23,8 @@ const ProductDescriptionSection = ({ item }) => {
     dispatch(increment({ id: item?.id }));
   };
 
-    const cartItem = cart.find((product) => product.id === item.id);
-    const quantity = cartItem ? cartItem.quantity : 0;
+  const cartItem = cart.find((product) => product.id === item.id);
+  const quantity = cartItem ? cartItem.quantity : 0;
 
   const currentItemDetails = {
     id: item?.id,
@@ -36,25 +36,25 @@ const ProductDescriptionSection = ({ item }) => {
     color: item?.extra_infos[0].value,
   };
 
-
-
   return (
-    <div className="flex flex-1 gap-y-1 md:gap-y-2 flex-col bg-[#f5f5f5] p-4 text-sm lg:text-2xl">
+    <div className="flex flex-1 flex-col gap-y-1 bg-[#f5f5f5] p-4 text-sm md:gap-y-2 lg:text-2xl">
       <p className="flex flex-row justify-between text-base font-bold md:text-3xl">
         {item.name}
         <img src="/favourite.svg" alt="favourites icon" />
       </p>
-      <span className="font-bold text-sm md:text-base">Price: {formatCurrency(currentItemDetails.price)}</span>
+      <span className="text-sm font-bold md:text-base">
+        Price: {formatCurrency(currentItemDetails.price)}
+      </span>
       <span>Available Quantity: {item?.available_quantity}</span>
       <span>Color : {item?.extra_infos[0].value}</span>
-      <p className="
-      flex flex-col mb-4 gap-y-2 items-center text-3xl font-bold">
-        Description <span className="text-lg font-normal">{item?.description}</span>
+      <p className="mb-4 flex flex-col items-center gap-y-2 text-3xl font-bold">
+        Description{" "}
+        <span className="text-lg font-normal">{item?.description}</span>
       </p>
       {quantity === 0 ? (
         <button
           onClick={handleAddToCart}
-          className="w-full py-2 bg-primary text-center text-white"
+          className="w-full bg-primary py-2 text-center text-white"
         >
           Add to cart
         </button>

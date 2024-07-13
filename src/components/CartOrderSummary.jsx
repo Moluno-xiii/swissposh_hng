@@ -1,12 +1,14 @@
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { selectCartTotal } from "../store/women/womenSlice";
+import { selectCartTotalMen } from "../store/men/menSlice";
 import formatCurrency from "../utils/formatCurrency";
 
 const CartOrderSummary = () => {
-   const total = useSelector(selectCartTotal);
+   const total = useSelector(selectCartTotal)
+    const menTotal = useSelector(selectCartTotalMen)
    const shipping = 100.00
-    const totalWithShipping = (total + shipping).toFixed(2);
+    const totalWithShipping = (total + menTotal + shipping).toFixed(2);
 
   return (
     <div className="flex h-[489px] w-[323px] flex-col bg-primary bg-opacity-[12%] p-[17.21px] text-[9.83px] font-medium leading-[13.27px] text-primary text-opacity-80 md:h-[597px] md:w-[404px] md:bg-opacity-[9%] md:p-5 md:text-xs md:leading-[16.2px]">
