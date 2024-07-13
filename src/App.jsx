@@ -11,6 +11,7 @@ import ShoppingBag from "./pages/ShoppingBag";
 import ProductDescriptionWomen from "./pages/ProductDescriptionWomen";
 import ProductDescriptionMen from "./pages/ProductDescriptionMen";
 import { fetchArrayData } from "./utils/fetchWomenArrayData";
+import Payment from "./pages/Payment"
 
 const router = createBrowserRouter([
   {
@@ -74,6 +75,10 @@ const router = createBrowserRouter([
       {
         path: "shopping-bag",
         element: <ShoppingBag />,
+      },
+      {
+        path: "payment",
+        element: <Payment />,
       },
     ],
   },

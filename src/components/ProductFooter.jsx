@@ -5,14 +5,6 @@ const ProductFooter = ({ progress, currentNumber, switchPage }) => {
       <span className="text-[8.09px] font-medium text-[#001F3FDB] md:text-xs">
         Showing {currentNumber} of 30
       </span>
-      {/* <img
-        src="/loading-bar.svg"
-        alt="loader indicator"
-        className="h-[3.37px] max-md:w-[155px] md:h-[5px]"
-      /> */}
-      {/* <button className="flex h-[22.24px] w-[136.8px] items-center justify-center bg-primary bg-opacity-[86%] text-[8.09px] font-bold capitalize leading-[10.92px] text-white md:h-[33px] md:w-[203px] md:text-xs md:leading-[16.2px]">
-        load more product
-      </button> */}
       <progress value={progress} max={1} className="" />
       <ul className="flex flex-row gap-3 text-[8.09px] md:text-xs">
         <li className="hover:underline" onClick={() => switchPage(1, 10, 0.3)}>
