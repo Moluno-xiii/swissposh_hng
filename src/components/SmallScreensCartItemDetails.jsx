@@ -6,7 +6,6 @@ const SmallScreensCartItemDetails = ({
   id,
   color,
   quantity,
-  new_id,
 }) => {
   return (
     <div className="mt-3 flex flex-col text-primary text-opacity-80 md:hidden">

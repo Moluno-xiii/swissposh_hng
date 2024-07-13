@@ -7,6 +7,8 @@ import { useState, useEffect } from "react";
 import Spinner from "../components/Spinner";
 import { Suspense, lazy } from "react";
 import Loader from "../components/Loader";
+import ErrorMessage from "../components/ErrorComponent.jsx"
+
 
 const ProductDetails = lazy(() => import("../components/ProductDetails"));
 
@@ -22,6 +24,7 @@ const ProductPageWomen = () => {
     setCurrentNumber(newNumber);
     setProgress(newProgress)
   };
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -45,8 +48,10 @@ const ProductPageWomen = () => {
   }, [page]);
 
   if (loading) return <Spinner />;
+  if (error) return <ErrorMessage message={error.message} />
   return (
     <div className="bg-[#F5F5F5] md:bg-white">
+   
       <SecondaryNav href={"/women"} text={"women"} />
       <DiscountHeader />
       <ProductHeader />
@@ -54,7 +59,11 @@ const ProductPageWomen = () => {
       <Suspense fallback={<Loader />}>
         <ProductDetails mappedArray={data?.items} route={`/women/products/`} />
       </Suspense>
-      <ProductFooter progress={progress} currentNumber={currentNumber} switchPage={switchPage} />
+      <ProductFooter
+        progress={progress}
+        currentNumber={currentNumber}
+        switchPage={switchPage}
+      />
     </div>
   );
 };
