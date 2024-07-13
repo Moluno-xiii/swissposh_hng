@@ -1,11 +1,10 @@
-import { cartImagesArray } from "../array";
 import CartItem from "../components/CartItem";
 import CartOrderSummary from "../components/CartOrderSummary";
 import SecondaryNav from "../components/SecondaryNav";
 import { useSelector } from "react-redux";
 
 const ShoppingBag = () => {
-    const cart = useSelector((state) => state.men.cart);
+    const cart = useSelector((state) => state.women.cart);
   return (
     <>
       <SecondaryNav href={"/women"} text={"women"} />

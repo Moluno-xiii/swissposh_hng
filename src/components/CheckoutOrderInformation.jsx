@@ -7,7 +7,7 @@ const CheckoutOrderInformation = () => {
       <div className="flex h-[396px] flex-col border-x border-b border-[#00000040] px-6 pt-6 md:h-[519px] text-xs leading-[16.2px] font-medium">
         <div className="flex flex-row justify-between border-b-2 border-black py-3">
           <span>Discount</span>
-          <span className="border-b border-b-black">Apply Discount</span>
+          <span className="border-b border-b-black">No Discount</span>
         </div>
         <div className="flex flex-col gap-y-3 border-b-2 border-black py-4">
           <div className="flex flex-row justify-between">

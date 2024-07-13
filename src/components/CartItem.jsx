@@ -11,19 +11,20 @@ const SmallScreensCartItemDetails = lazy(
 /* eslint-disable react/prop-types */
 const CartItem = ({ item }) => {
   const {
-    title,
-    id,
+    name,
+    unique_id,
     price,
     color,
     size,
-    largeScreensImageUrl,
     smallScreensImageUrl,
-    quantity
+    quantity,
+    imageUrl,
+    available_quantity
   } = item;
   return (
     <li className="flex h-[456px] flex-col gap-x-3 bg-[#E8EBEE] p-4 text-primary text-opacity-80 md:h-[187px] md:flex-row md:bg-primary md:bg-opacity-[9%] md:p-5">
       <img
-        src={largeScreensImageUrl}
+        src={imageUrl}
         alt="image of item"
         className="hidden md:inline-block"
         width={126}
@@ -38,21 +39,24 @@ const CartItem = ({ item }) => {
       />
       <Suspense fallback={<Loader />}>
         <LargeScreensCartItemDetails
-          title={title}
+          title={name}
           price={price}
-          id={id}
+          id={unique_id}
           size={size}
           color={color}
           quantity={quantity}
+          available_quantity={available_quantity}
         />
       </Suspense>
       <Suspense fallback={<Loader />}>
         <SmallScreensCartItemDetails
-          title={title}
+          title={name}
           price={price}
-          id={id}
+          id={unique_id}
           size={size}
           color={color}
+          quantity={quantity}
+          available_quantity={available_quantity}
         />
       </Suspense>
     </li>
