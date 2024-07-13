@@ -1,4 +1,4 @@
-import { cartImagesArray } from "../../array";
+import { cartImagesArray } from "../array";
 import CartItem from "../components/CartItem";
 import CartOrderSummary from "../components/CartOrderSummary";
 import SecondaryNav from "../components/SecondaryNav";

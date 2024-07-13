@@ -1,4 +1,4 @@
-import { womenProductsArray } from "../../array";
+import { womenProductsArray } from "../array";
 import ProductHeader from "../components/ProductHeader";
 import ProductFilters from "../components/ProductFilters";
 import ProductFooter from "../components/ProductFooter";
