@@ -28,6 +28,7 @@ const ProductDescriptionSection = ({ item, cart, addToCart, increment, decrement
     id: item?.id,
     unique_id: item.unique_id,
     price: item?.current_price,
+    
     name: item?.name,
     available_quantity: item?.available_quantity,
     imageUrl: `https://api.timbu.cloud/images/${item?.photos[0].url}`,
