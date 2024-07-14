@@ -2,6 +2,7 @@
 import { useDispatch } from "react-redux";
 import { setQuantity } from "../store/women/womenSlice";
 import { clearItem } from "../store/women/womenSlice";
+import { clearItem as clearItemMen } from "../store/men/menSlice";
 import { FiTrash2 } from "react-icons/fi";
 import formatCurrency from "../utils/formatCurrency";
 
@@ -32,6 +33,7 @@ const LargeScreensCartItemDetails = ({
 
         const handleClearItem = (id) => {
           dispatch(clearItem({ id }));
+          dispatch(clearItemMen({ id }));
         };
 
   return (
