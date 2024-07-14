@@ -13,13 +13,13 @@ const Products = ({ product, route }) => {
     <div className="flex max-h-[285px] max-w-[161px] flex-col md:max-h-[502px] md:max-w-[232px]">
       <Suspense fallback={<Loader />}>
         <img
-          src={`https://api.timbu.cloud/images/${product.photos[0].url}`}
+          src={`https://api.timbu.cloud/images/${product.photos[0]?.url}`}
           alt="image of the product"
           className="inline-block h-[161px] w-[217px] md:hidden"
           onClick={handleNavigation}
         />
         <img
-          src={`https://api.timbu.cloud/images/${product.photos[0].url}`}
+          src={`https://api.timbu.cloud/images/${product.photos[0]?.url}`}
           alt="image of the product"
           className="hidden h-[437px] w-[232px] md:inline-block"
           onClick={handleNavigation}
