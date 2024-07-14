@@ -59,12 +59,12 @@ const menSlice = createSlice({
       const { id } = action.payload;
       state.cart = state.cart.filter((item) => item.id !== id);
     },
-    clearCart: (state) => {
+    clearCartMen: (state) => {
       state.cart = [];
     },
   },
 });
-export const selectCartTotal = (state) =>
+export const selectCartTotalMen = (state) =>
   state.men.cart.reduce(
     (total, item) => total + item.quantity * item.price,
     0,
