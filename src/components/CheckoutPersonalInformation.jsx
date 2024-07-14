@@ -60,7 +60,7 @@ const CheckoutPersonalInformation = () => {
       </div>
       <form
         onSubmit={handleSubmit}
-        className="h-[396px] border-x border-b border-[#00000040] bg-white px-4 text-black md:h-[519px] md:px-6 md:pt-6"
+        className="h-[540px] border-x border-b border-[#00000040] bg-white px-4 text-black md:h-[519px] md:px-6 md:pt-6"
       >
         <div className="mb-6 flex flex-col gap-y-2 max-md:pt-5">
           <label className="text-[10px] leading-[13.5px]" htmlFor="email">
