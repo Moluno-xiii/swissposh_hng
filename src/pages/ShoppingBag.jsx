@@ -3,18 +3,26 @@ import CartOrderSummary from "../components/CartOrderSummary";
 import SecondaryNav from "../components/SecondaryNav";
 import { useDispatch, useSelector } from "react-redux";
 import { clearCart } from "../store/women/womenSlice";
+import { clearCartMen } from "../store/men/menSlice";
 import { selectCartTotal } from "../store/women/womenSlice";
+import { selectCartTotalMen } from "../store/men/menSlice";
 
 const ShoppingBag = () => {
   const cart = useSelector((state) => state.women.cart);
+  const menCart = useSelector((state) => state.men.cart)
   const dispatch = useDispatch();
   const handleClearCart = () => {
     dispatch(clearCart());
+    dispatch(clearCartMen())
   };
 
+  const newCart = [...cart, ...menCart];
      const total = useSelector(selectCartTotal);
+     const totalMen = useSelector(selectCartTotalMen);
 
-     if (total <= 0)
+     const overallTotal = total + totalMen;
+
+     if (overallTotal <= 0)
        return (
          <div className="mx-auto h-[100dvh] w-[300px] md:text-2xl mt-10 capitalize font-bold">your cart is empty</div>
        );
@@ -27,7 +35,7 @@ const ShoppingBag = () => {
         </p>
         <div className="flex flex-col gap-6 max-lg:items-center max-md:px-4 lg:flex-row lg:justify-center">
           <ul className="flex w-[323px] flex-col gap-y-3 md:w-[576px]">
-            {cart.map((item, index) => (
+            {newCart.map((item, index) => (
               <CartItem item={item} key={index} />
             ))}
           </ul>

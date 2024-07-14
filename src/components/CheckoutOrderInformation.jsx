@@ -1,11 +1,14 @@
 import { useSelector } from "react-redux";
 import { selectCartTotal } from "../store/women/womenSlice";
+import { selectCartTotalMen } from "../store/men/menSlice";
 import formatCurrency from "../utils/formatCurrency";
 
 const CheckoutOrderInformation = () => {
   const total = useSelector(selectCartTotal);
-  const shipping = 100.00;
-  const totalWithShipping = (total + shipping).toFixed(2);
+  const menTotal = useSelector(selectCartTotalMen);
+  const overallTotal = total + menTotal;
+  const shipping = 100.0;
+  const totalWithShipping = (overallTotal + shipping).toFixed(2);
 
   if (total <= 0) return <div className="w-[200px] mx-auto h-[100dvh]">your cart is empty</div>;
   return (
@@ -21,7 +24,7 @@ const CheckoutOrderInformation = () => {
         <div className="flex flex-col gap-y-3 border-b-2 border-black py-4">
           <div className="flex flex-row justify-between">
             <span>Total Order Price</span>
-            <span>{formatCurrency(total)}</span>
+            <span>{formatCurrency(overallTotal)}</span>
           </div>
           <div className="flex flex-row justify-between">
             <span>Delivery</span>

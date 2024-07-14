@@ -1,13 +1,13 @@
 /* eslint-disable react/prop-types */
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
-import { addToCart, increment, decrement } from "../store/women/womenSlice";
+// import { addToCart, increment, decrement } from "../store/women/womenSlice";
 import "react-toastify/dist/ReactToastify.css";
 import formatCurrency from "../utils/formatCurrency";
 
-const ProductDescriptionSection = ({ item }) => {
+const ProductDescriptionSection = ({ item, cart, addToCart, increment, decrement }) => {
   const notify = () => toast("Item added to cart!");
-  const cart = useSelector((state) => state.women.cart);
+  // const cart = useSelector((state) => state.women.cart);
   const dispatch = useDispatch();
 
   const handleAddToCart = () => {
@@ -78,7 +78,7 @@ const ProductDescriptionSection = ({ item }) => {
       )}
       <ToastContainer
         position="top-right"
-        autoClose={3000} // 3 seconds
+        autoClose={3000}
         hideProgressBar={false}
         newestOnTop={false}
         closeOnClick
