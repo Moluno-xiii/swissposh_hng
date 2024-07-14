@@ -1,13 +1,11 @@
 /* eslint-disable react/prop-types */
 import { useDispatch } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
-// import { addToCart, increment, decrement } from "../store/women/womenSlice";
 import "react-toastify/dist/ReactToastify.css";
 import formatCurrency from "../utils/formatCurrency";
 
 const ProductDescriptionSection = ({ item, cart, addToCart, increment, decrement }) => {
   const notify = () => toast("Item added to cart!");
-  // const cart = useSelector((state) => state.women.cart);
   const dispatch = useDispatch();
 
   const handleAddToCart = () => {
@@ -30,6 +28,7 @@ const ProductDescriptionSection = ({ item, cart, addToCart, increment, decrement
     id: item?.id,
     unique_id: item.unique_id,
     price: item?.current_price,
+    
     name: item?.name,
     available_quantity: item?.available_quantity,
     imageUrl: `https://api.timbu.cloud/images/${item?.photos[0].url}`,

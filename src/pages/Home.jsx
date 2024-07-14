@@ -10,6 +10,11 @@ import { useEffect } from "react";
 
 function Home() {
   const navigation = useNavigation();
+    useEffect(() => {
+      toast.info(
+        "Please be patient loading content may take a while because of the reverse proxy server to bypass CORS policies",
+      );
+    }, []);
   if (navigation.state === "loading") return <Spinner />
   return (
     <div className="flex min-h-[100dvh] max-w-[100vw] flex-col justify-center text-primary">
