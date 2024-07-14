@@ -75,7 +75,7 @@ export const {
   increment,
   decrement,
   setQuantity,
-  clearCart,
+  clearCartMen,
   clearItem,
 } = menSlice.actions;
 export default menSlice.reducer;

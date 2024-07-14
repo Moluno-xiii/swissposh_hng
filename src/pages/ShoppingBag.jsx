@@ -18,8 +18,11 @@ const ShoppingBag = () => {
 
   const newCart = [...cart, ...menCart];
      const total = useSelector(selectCartTotal);
+     const totalMen = useSelector(selectCartTotalMen);
 
-     if (total <= 0)
+     const overallTotal = total + totalMen;
+
+     if (overallTotal <= 0)
        return (
          <div className="mx-auto h-[100dvh] w-[300px] md:text-2xl mt-10 capitalize font-bold">your cart is empty</div>
        );
