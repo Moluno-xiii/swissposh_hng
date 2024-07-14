@@ -1,4 +1,7 @@
 /* eslint-disable react/prop-types */
+
+import { useDispatch } from "react-redux";
+import { setQuantity } from "../store/women/womenSlice";
 import formatCurrency from "../utils/formatCurrency"
 const SmallScreensCartItemDetails = ({
   title,
@@ -6,14 +9,37 @@ const SmallScreensCartItemDetails = ({
   id,
   color,
   quantity,
+  available_quantity,
 }) => {
+  const dispatch = useDispatch()
+  const handleQuantityChange = (e) => {
+    const newQuantity = parseInt(e.target.value);
+    dispatch(setQuantity({ id, quantity: newQuantity }));
+  };
+
+  const options = [];
+  for (let i = 1; i <= available_quantity; i++) {
+    options.push(
+      <option key={i} value={i}>
+        {i}
+      </option>,
+    );
+  }
   return (
     <div className="mt-3 flex flex-col text-primary text-opacity-80 md:hidden">
       <div className="mb-3 flex flex-row items-center justify-between">
         <span className="w-[118px] text-sm font-bold">{title}</span>
         <div className="flex flex-row gap-x-2">
           <img src="/cart-wishlist-icon.svg" alt="wishlist icon" />
-          <img src="/cart-item-number-icon.svg" alt="number of items" />
+          <select
+            name="quantity"
+            value={quantity}
+            onChange={handleQuantityChange}
+            className="h-[25px] w-16"
+            disabled={true}
+          >
+            {options}
+          </select>
         </div>
       </div>
       <span className="text-xs leading-[16.2px]">{formatCurrency(price)}</span>
@@ -27,7 +53,7 @@ const SmallScreensCartItemDetails = ({
         <li>Color</li>
         <li>{color}</li>
         <li>total</li>
-        <li className="font-bold">{formatCurrency( price * quantity)}</li>
+        <li className="font-bold">{formatCurrency(price * quantity)}</li>
       </ul>
     </div>
   );
