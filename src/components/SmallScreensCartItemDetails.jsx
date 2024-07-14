@@ -2,7 +2,11 @@
 
 import { useDispatch } from "react-redux";
 import { setQuantity } from "../store/women/womenSlice";
-import formatCurrency from "../utils/formatCurrency"
+import formatCurrency from "../utils/formatCurrency";
+import { clearItem as clearItemMen } from "../store/men/menSlice";
+import { clearItem } from "../store/women/womenSlice";
+import { FiTrash2 } from "react-icons/fi";
+
 const SmallScreensCartItemDetails = ({
   title,
   price,
@@ -10,11 +14,17 @@ const SmallScreensCartItemDetails = ({
   color,
   quantity,
   available_quantity,
+  new_id,
 }) => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const handleQuantityChange = (e) => {
     const newQuantity = parseInt(e.target.value);
     dispatch(setQuantity({ id, quantity: newQuantity }));
+  };
+
+  const handleClearItem = (id) => {
+    dispatch(clearItem({ id }));
+    dispatch(clearItemMen({ id }));
   };
 
   const options = [];
@@ -42,7 +52,17 @@ const SmallScreensCartItemDetails = ({
           </select>
         </div>
       </div>
-      <span className="text-xs leading-[16.2px]">{formatCurrency(price)}</span>
+      <div className="flex flex-row justify-between">
+        <span className="text-xs leading-[16.2px]">
+          {formatCurrency(price)}
+        </span>
+        <span>
+          <FiTrash2
+            className="text-red-500"
+            onClick={() => handleClearItem(new_id)}
+          />
+        </span>
+      </div>
       <ul className="leading-[16.2px]] mt-2 flex flex-row justify-between py-7 text-xs capitalize">
         <li>Art No</li>
         <li>{id}</li>
@@ -59,4 +79,4 @@ const SmallScreensCartItemDetails = ({
   );
 };
 
-export default SmallScreensCartItemDetails
+export default SmallScreensCartItemDetails;

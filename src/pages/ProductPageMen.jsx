@@ -32,12 +32,13 @@ const ProductPageWomen = () => {
           `https://reverse-proxy-tp0r.onrender.com/products?organization_id=b10d95a3d180490d940e7f1475f90195&reverse_sort=false&page=${page}&size=10&Appid=B8KBBEX6DB6IB5Z&Apikey=1067ceca93244c2fbf0925ec925de4fa20240714004338071383`,
         );
         if (!response.ok) {
+          setError("Network error try again later")
           throw new Error("Network response was not ok");
         }
         const result = await response.json();
         setData(result);
       } catch (error) {
-        setError(error);
+        setError("Network error try again later")
       } finally {
         setLoading(false);
       }

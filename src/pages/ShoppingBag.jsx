@@ -19,7 +19,6 @@ const ShoppingBag = () => {
   const newCart = [...cart, ...menCart];
      const total = useSelector(selectCartTotal);
      const totalMen = useSelector(selectCartTotalMen);
-
      const overallTotal = total + totalMen;
 
      if (overallTotal <= 0)

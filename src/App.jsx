@@ -10,9 +10,7 @@ import WomenPageDetails from "./pages/WomenPageDetails";
 import ShoppingBag from "./pages/ShoppingBag";
 import ProductDescriptionWomen from "./pages/ProductDescriptionWomen";
 import ProductDescriptionMen from "./pages/ProductDescriptionMen";
-import { fetchArrayData } from "./utils/fetchWomenArrayData";
 import Payment from "./pages/Payment"
-import { fetchMenArrayData } from "./utils/fetchMenArrayData";
 
 const router = createBrowserRouter([
   {
@@ -31,7 +29,6 @@ const router = createBrowserRouter([
           {
             path: "/women/products",
             element: <ProductPageWomen />,
-            loader: fetchArrayData,
           },
           {
             path: "/women/products/:id",
@@ -53,7 +50,7 @@ const router = createBrowserRouter([
         element: <MenPage />,
         children: [
           { index: true, element: <MenPageDetails /> },
-          { path: "/men/products", element: <ProductPageMen />, loader : fetchMenArrayData },
+          { path: "/men/products", element: <ProductPageMen />, },
           {
             path: "/men/products/:id",
             element: <ProductDescriptionMen />,

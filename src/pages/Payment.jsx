@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { clearCart } from "../store/women/womenSlice";
+import { clearCartMen } from "../store/men/menSlice";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
@@ -20,8 +21,8 @@ const Payment = () => {
       return;
     }
 
-    if (isNaN(cardNumber) || cardNumber.length !== 12) {
-      toast.error("Card number should be 12 digits.");
+    if (isNaN(cardNumber) || cardNumber.length !== 16) {
+      toast.error("Card number should be 16 digits.");
       return;
     }
 
@@ -42,6 +43,7 @@ const Payment = () => {
       toast.success("Your order has been placed", {
         onClose: () => {
           dispatch(clearCart());
+          dispatch(clearCartMen())
           navigate("/");
         },
       });
