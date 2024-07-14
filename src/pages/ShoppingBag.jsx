@@ -38,7 +38,7 @@ const ShoppingBag = () => {
               <CartItem item={item} key={index} />
             ))}
           </ul>
-         {cart.length >= 1 && <button
+         {newCart.length >= 1 && <button
             onClick={() => handleClearCart()}
             className="rounded-md bg-red-700 px-4 py-2 text-primary transition-all duration-300 hover:bg-opacity-80"
           >
