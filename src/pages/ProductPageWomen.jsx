@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import ProductHeader from "../components/ProductHeader";
 import ProductFilters from "../components/ProductFilters";
 import ProductFooter from "../components/ProductFooter";
@@ -7,12 +8,16 @@ import { useState, useEffect } from "react";
 import Spinner from "../components/Spinner";
 import { Suspense, lazy } from "react";
 import Loader from "../components/Loader";
-import ErrorMessage from "../components/ErrorComponent.jsx"
-
+import ErrorMessage from "../components/ErrorComponent.jsx";
 
 const ProductDetails = lazy(() => import("../components/ProductDetails"));
 
-const ProductPageWomen = () => {
+const ProductPageWomen = ({
+  womenOrgID,
+  womenApiKey,
+  womenAppID,
+  proxyUrl,
+}) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -22,7 +27,7 @@ const ProductPageWomen = () => {
   const switchPage = (value, newNumber, newProgress) => {
     setPage(value);
     setCurrentNumber(newNumber);
-    setProgress(newProgress)
+    setProgress(newProgress);
   };
 
   useEffect(() => {
@@ -30,10 +35,10 @@ const ProductPageWomen = () => {
       try {
         setLoading(true);
         const response = await fetch(
-          `https://reverse-proxy-tp0r.onrender.com/products?organization_id=13cad8063ba940efbccda69212e11d26&reverse_sort=false&page=${page}&size=10&Appid=3FMR5O3PRSXTMG8&Apikey=7c133f07b8864976a3095c480e82577a20240712120853424774`,
+          `${proxyUrl}/products?organization_id=${womenOrgID}&reverse_sort=false&page=${page}&size=10&Appid=${womenAppID}&Apikey=${womenApiKey}`,
         );
         if (!response.ok) {
-           setError("Network error try again later");
+          setError("Network error try again later");
           throw new Error("Network response was not ok");
         }
         const result = await response.json();
@@ -49,10 +54,9 @@ const ProductPageWomen = () => {
   }, [page]);
 
   if (loading) return <Spinner />;
-  if (error) return <ErrorMessage message={error.message} />
+  if (error) return <ErrorMessage message={error.message} />;
   return (
     <div className="bg-[#F5F5F5] md:bg-white">
-   
       <SecondaryNav href={"/women"} text={"women"} />
       <DiscountHeader />
       <ProductHeader />
