@@ -10,9 +10,15 @@ import WomenPageDetails from "./pages/WomenPageDetails";
 import ShoppingBag from "./pages/ShoppingBag";
 import ProductDescriptionWomen from "./pages/ProductDescriptionWomen";
 import ProductDescriptionMen from "./pages/ProductDescriptionMen";
-import { fetchArrayData } from "./utils/fetchWomenArrayData";
-import Payment from "./pages/Payment"
-import { fetchMenArrayData } from "./utils/fetchMenArrayData";
+import Payment from "./pages/Payment";
+
+const proxyUrl = import.meta.env.VITE_REVERSE_PROXY_URL;
+const womenAppID = import.meta.env.VITE_WOMEN_APP_ID;
+const womenApiKey = import.meta.env.VITE_WOMEN_API_KEY;
+const womenOrgID = import.meta.env.VITE_WOMEN_API_ORG_ID;
+const menAppID = import.meta.env.VITE_MEN_APP_ID;
+const menApiKey = import.meta.env.VITE_MEN_API_KEY;
+const menOrgID = import.meta.env.VITE_MEN_API_ORG_ID;
 
 const router = createBrowserRouter([
   {
@@ -30,15 +36,23 @@ const router = createBrowserRouter([
           { index: true, element: <WomenPageDetails /> },
           {
             path: "/women/products",
-            element: <ProductPageWomen />,
-            loader: fetchArrayData,
+            element: (
+              <ProductPageWomen
+                proxyUrl={proxyUrl}
+                womenApiKey={womenApiKey}
+                womenAppID={womenAppID}
+                womenOrgID={womenOrgID}
+              />
+            ),
           },
           {
             path: "/women/products/:id",
             element: <ProductDescriptionWomen />,
             loader: async ({ params }) => {
               const response = await fetch(
-                `https://reverse-proxy-tp0r.onrender.com/products/${params.id}?organization_id=13cad8063ba940efbccda69212e11d26&reverse_sort=false&page=1&size=10&Appid=3FMR5O3PRSXTMG8&Apikey=7c133f07b8864976a3095c480e82577a20240712120853424774`,
+                `${proxyUrl}/products/${params.id}?organization_id=${womenOrgID}&reverse_sort=false&page=1&size=10&Appid=${
+                  womenAppID
+                }&Apikey=${womenApiKey}`,
               );
               if (!response.ok) {
                 throw new Error("Network response was not ok");
@@ -53,13 +67,23 @@ const router = createBrowserRouter([
         element: <MenPage />,
         children: [
           { index: true, element: <MenPageDetails /> },
-          { path: "/men/products", element: <ProductPageMen />, loader : fetchMenArrayData },
+          {
+            path: "/men/products",
+            element: (
+              <ProductPageMen
+                proxyUrl={proxyUrl}
+                menApiKey={menApiKey}
+                menAppID={menAppID}
+                menOrgID={menOrgID}
+              />
+            ),
+          },
           {
             path: "/men/products/:id",
             element: <ProductDescriptionMen />,
             loader: async ({ params }) => {
               const response = await fetch(
-                `https://reverse-proxy-tp0r.onrender.com/products/${params.id}?organization_id=b10d95a3d180490d940e7f1475f90195&reverse_sort=false&page=1&size=10&Appid=B8KBBEX6DB6IB5Z&Apikey=1067ceca93244c2fbf0925ec925de4fa20240714004338071383`,
+                `${proxyUrl}/products/${params.id}?organization_id=${menOrgID}&reverse_sort=false&page=1&size=10&Appid=${menAppID}&Apikey=${menApiKey}`,
               );
               if (!response.ok) {
                 throw new Error("Network response was not ok");

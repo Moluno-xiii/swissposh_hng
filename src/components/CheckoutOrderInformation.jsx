@@ -1,16 +1,9 @@
-import { useSelector } from "react-redux";
-import { selectCartTotal } from "../store/women/womenSlice";
-import { selectCartTotalMen } from "../store/men/menSlice";
+/* eslint-disable react/prop-types */
+
 import formatCurrency from "../utils/formatCurrency";
 
-const CheckoutOrderInformation = () => {
-  const total = useSelector(selectCartTotal);
-  const menTotal = useSelector(selectCartTotalMen);
-  const overallTotal = total + menTotal;
-  const shipping = 100.0;
-  const totalWithShipping = (overallTotal + shipping).toFixed(2);
+const CheckoutOrderInformation = ({ overallTotal, shipping, totalWithShipping}) => {
 
-  if (total <= 0) return <div className="w-[200px] mx-auto h-[100dvh]">your cart is empty</div>;
   return (
     <div className="mb-14 flex w-[327px] flex-col text-black md:mb-7 md:w-[456px]">
       <p className="flex h-[46px] flex-row items-center justify-start bg-black px-4 text-[10px] uppercase leading-[13.5px] text-white md:px-6 md:text-xs md:leading-[16.2px]">

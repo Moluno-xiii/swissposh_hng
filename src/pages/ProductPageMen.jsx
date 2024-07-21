@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import ProductHeader from "../components/ProductHeader";
 import ProductFilters from "../components/ProductFilters";
 import ProductFooter from "../components/ProductFooter";
@@ -11,7 +12,7 @@ import ErrorMessage from "../components/ErrorComponent.jsx";
 
 const ProductDetails = lazy(() => import("../components/ProductDetails"));
 
-const ProductPageWomen = () => {
+const ProductPageWomen = ({ menOrgID, menApiKey, menAppID, proxyUrl }) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -29,15 +30,16 @@ const ProductPageWomen = () => {
       try {
         setLoading(true);
         const response = await fetch(
-          `https://reverse-proxy-tp0r.onrender.com/products?organization_id=b10d95a3d180490d940e7f1475f90195&reverse_sort=false&page=${page}&size=10&Appid=B8KBBEX6DB6IB5Z&Apikey=1067ceca93244c2fbf0925ec925de4fa20240714004338071383`,
+          `${proxyUrl}/products?organization_id=${menOrgID}&reverse_sort=false&page=${page}&size=10&Appid=${menAppID}&Apikey=${menApiKey}`,
         );
         if (!response.ok) {
+          setError("Network error try again later");
           throw new Error("Network response was not ok");
         }
         const result = await response.json();
         setData(result);
       } catch (error) {
-        setError(error);
+        setError("Network error try again later");
       } finally {
         setLoading(false);
       }

@@ -6,7 +6,9 @@ const MobileFooterNavbar = () => {
     <nav className="fixed bottom-[5px] left-2 z-40 w-[95vw] sm:hidden">
       <ul className="flex w-full flex-row justify-between rounded-lg bg-black px-4 py-2">
         <li className="flex flex-col gap-y-1 text-white">
-          <NavLink to="/">
+          <NavLink to="/" 
+           className={({ isActive }) =>
+              isActive ? "text-[#FFC633] capitalize font-bold" : "text-white"}>
             <CiSearch className="h-[20px] w-[22px]" />
             <span className="text-[10px] font-medium leading-[11.68px]">
               explore
