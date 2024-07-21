@@ -61,7 +61,7 @@ const ProductDescriptionSection = ({
       {quantity === 0 ? (
         <button
           onClick={handleAddToCart}
-          className="w-full bg-primary py-2 text-center text-white"
+          className="w-full bg-primary hover:bg-opacity-80 duration-300 transition-all py-2 text-center text-white"
         >
           Add to cart
         </button>
