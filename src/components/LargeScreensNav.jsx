@@ -1,5 +1,8 @@
 import { NavLink } from "react-router-dom";
+import UseGetCart from "../utils/UseGetCart";
 const LargeScreensNav = () => {
+  const {newCart} = UseGetCart()
+
   return (
     <nav className="hidden fixed left-0 right-0 z-20 h-[70px] items-center justify-between bg-black px-6 text-xs md:flex">
       <ul className="flex flex-row items-center gap-x-7">
@@ -14,7 +17,7 @@ const LargeScreensNav = () => {
         <li className="">Sign in</li>
         <li className="cursor-pointer">Favourites (0)</li>
         <li className="cursor-pointer">
-          <NavLink to="shopping-bag">Cart</NavLink>
+          <NavLink to="shopping-bag">Cart ({newCart.length})</NavLink>
         </li>
       </ul>
     </nav>

@@ -6,17 +6,16 @@ import { clearCart } from "../store/women/womenSlice";
 import { clearCartMen } from "../store/men/menSlice";
 import { selectCartTotal } from "../store/women/womenSlice";
 import { selectCartTotalMen } from "../store/men/menSlice";
+import UseGetCart from "../utils/UseGetCart";
 
 const ShoppingBag = () => {
-  const cart = useSelector((state) => state.women.cart);
-  const menCart = useSelector((state) => state.men.cart)
   const dispatch = useDispatch();
+  const {newCart} = UseGetCart()
   const handleClearCart = () => {
     dispatch(clearCart());
     dispatch(clearCartMen())
   };
 
-  const newCart = [...cart, ...menCart];
      const total = useSelector(selectCartTotal);
      const totalMen = useSelector(selectCartTotalMen);
      const overallTotal = total + totalMen;
@@ -37,13 +36,16 @@ const ShoppingBag = () => {
             {newCart.map((item, index) => (
               <CartItem item={item} key={index} />
             ))}
+            {newCart.length >= 1 && (
+              <button
+                onClick={() => handleClearCart()}
+                className="rounded-md bg-red-700 px-4 py-2 text-primary transition-all duration-300 hover:bg-opacity-80"
+              >
+                Clear All Items from Cart
+              </button>
+            )}
           </ul>
-         {newCart.length >= 1 && <button
-            onClick={() => handleClearCart()}
-            className="rounded-md bg-red-700 px-4 py-2 text-primary transition-all duration-300 hover:bg-opacity-80"
-          >
-            Clear All Items from Cart
-          </button>}
+
           <CartOrderSummary />
         </div>
       </div>
