@@ -11,7 +11,7 @@ function Home() {
   const navigation = useNavigation();
   useEffect(() => {
     toast.info(
-      "Please be patient, loading content for the first time may take a while because of the reverse proxy server to bypass CORS policies",
+      "Please be patient, loading content FOR THE FIRST TIME may take a while (up to 3 minutes) because of the reverse proxy server to bypass CORS policies",
     );
   }, []);
   if (navigation.state === "loading") return <Spinner />;
