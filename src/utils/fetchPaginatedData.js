@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 const proxyUrl = import.meta.env.VITE_REVERSE_PROXY_URL;
 const womenAppID = import.meta.env.VITE_WOMEN_APP_ID;
 const womenApiKey = import.meta.env.VITE_WOMEN_API_KEY;
@@ -31,34 +30,4 @@ const fetchWoMenData = async (page) => {
   return result
 };
 
-const useFetchWoMenData = (page) => {
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        setLoading(true);
-        const response = await fetch(
-          `${proxyUrl}/products?organization_id=${womenOrgID}&reverse_sort=false&page=${page}&size=10&Appid=${womenAppID}&Apikey=${womenApiKey}`,
-        );
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        const result = await response.json();
-        setData(result);
-      } catch (error) {
-        setError(error.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchData();
-  }, [page]);
-
-  return { data, loading, error };
-};
-
-export { useFetchMenData, useFetchWoMenData, fetchMenData, fetchWoMenData };
+export { fetchMenData, fetchWoMenData };
