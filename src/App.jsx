@@ -11,6 +11,7 @@ import ShoppingBag from "./pages/ShoppingBag";
 import ProductDescriptionWomen from "./pages/ProductDescriptionWomen";
 import ProductDescriptionMen from "./pages/ProductDescriptionMen";
 import Payment from "./pages/Payment";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const proxyUrl = import.meta.env.VITE_REVERSE_PROXY_URL;
 const womenAppID = import.meta.env.VITE_WOMEN_APP_ID;
@@ -19,6 +20,8 @@ const womenOrgID = import.meta.env.VITE_WOMEN_API_ORG_ID;
 const menAppID = import.meta.env.VITE_MEN_APP_ID;
 const menApiKey = import.meta.env.VITE_MEN_API_KEY;
 const menOrgID = import.meta.env.VITE_MEN_API_ORG_ID;
+
+const queryClient = new QueryClient();
 
 const router = createBrowserRouter([
   {
@@ -110,7 +113,11 @@ const router = createBrowserRouter([
 ]);
 
 const App = () => {
-  return <RouterProvider router={router} />;
+  return (
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router} />
+    </QueryClientProvider>
+  );
 };
 
 export default App;
