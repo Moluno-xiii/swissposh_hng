@@ -12,6 +12,7 @@ import ProductDescriptionWomen from "./pages/ProductDescriptionWomen";
 import ProductDescriptionMen from "./pages/ProductDescriptionMen";
 import Payment from "./pages/Payment";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 const proxyUrl = import.meta.env.VITE_REVERSE_PROXY_URL;
 const womenAppID = import.meta.env.VITE_WOMEN_APP_ID;
@@ -21,7 +22,13 @@ const menAppID = import.meta.env.VITE_MEN_APP_ID;
 const menApiKey = import.meta.env.VITE_MEN_API_KEY;
 const menOrgID = import.meta.env.VITE_MEN_API_ORG_ID;
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions : {
+    queries : {
+      staleTime : 60 * 1000
+    }
+  }
+});
 
 const router = createBrowserRouter([
   {
@@ -101,6 +108,7 @@ const router = createBrowserRouter([
 const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
+      <ReactQueryDevtools initialIsOpen={false} />
       <RouterProvider router={router} />
     </QueryClientProvider>
   );
