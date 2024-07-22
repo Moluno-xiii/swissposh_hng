@@ -21,7 +21,7 @@ const Products = ({ product, route }) => {
         <img
           src={`https://api.timbu.cloud/images/${product.photos[0]?.url}`}
           alt="image of the product"
-          className="hidden h-[437px] w-[232px] md:inline-block"
+          className="hidden h-[437px] w-full md:inline-block"
           onClick={handleNavigation}
         />
       </Suspense>
