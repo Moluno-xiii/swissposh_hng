@@ -39,14 +39,7 @@ const router = createBrowserRouter([
           { index: true, element: <WomenPageDetails /> },
           {
             path: "/women/products",
-            element: (
-              <ProductPageWomen
-                proxyUrl={proxyUrl}
-                womenApiKey={womenApiKey}
-                womenAppID={womenAppID}
-                womenOrgID={womenOrgID}
-              />
-            ),
+            element: <ProductPageWomen />,
           },
           {
             path: "/women/products/:id",
@@ -72,14 +65,7 @@ const router = createBrowserRouter([
           { index: true, element: <MenPageDetails /> },
           {
             path: "/men/products",
-            element: (
-              <ProductPageMen
-                proxyUrl={proxyUrl}
-                menApiKey={menApiKey}
-                menAppID={menAppID}
-                menOrgID={menOrgID}
-              />
-            ),
+            element: <ProductPageMen />,
           },
           {
             path: "/men/products/:id",

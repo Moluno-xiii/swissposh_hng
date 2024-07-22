@@ -35,17 +35,38 @@ const useFetchMenData = (page) => {
 
   return { data, loading, error };
 };
-const fetchWoMenData = async (page) => {
-  const response = await fetch(
-    `${proxyUrl}/products?organization_id=${womenOrgID}&reverse_sort=false&page=${page}&size=10&Appid=${womenAppID}&Apikey=${womenApiKey}`,
-  );
-  if (!response.ok) {
-    throw new Error("Network response was not ok");
-  }
-  return response.json();
+
+const useFetchWoMenData = (page) => {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+        const response = await fetch(
+          `${proxyUrl}/products?organization_id=${womenOrgID}&reverse_sort=false&page=${page}&size=10&Appid=${womenAppID}&Apikey=${womenApiKey}`,
+        );
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const result = await response.json();
+        setData(result);
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, [page]);
+
+  return { data, loading, error };
 };
 
 
-export {useFetchMenData, fetchWoMenData}
+export {useFetchMenData, useFetchWoMenData}
 
 
