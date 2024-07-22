@@ -11,6 +11,8 @@ import ShoppingBag from "./pages/ShoppingBag";
 import ProductDescriptionWomen from "./pages/ProductDescriptionWomen";
 import ProductDescriptionMen from "./pages/ProductDescriptionMen";
 import Payment from "./pages/Payment";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 const proxyUrl = import.meta.env.VITE_REVERSE_PROXY_URL;
 const womenAppID = import.meta.env.VITE_WOMEN_APP_ID;
@@ -19,6 +21,14 @@ const womenOrgID = import.meta.env.VITE_WOMEN_API_ORG_ID;
 const menAppID = import.meta.env.VITE_MEN_APP_ID;
 const menApiKey = import.meta.env.VITE_MEN_API_KEY;
 const menOrgID = import.meta.env.VITE_MEN_API_ORG_ID;
+
+const queryClient = new QueryClient({
+  defaultOptions : {
+    queries : {
+      staleTime : 60 * 1000
+    }
+  }
+});
 
 const router = createBrowserRouter([
   {
@@ -36,14 +46,7 @@ const router = createBrowserRouter([
           { index: true, element: <WomenPageDetails /> },
           {
             path: "/women/products",
-            element: (
-              <ProductPageWomen
-                proxyUrl={proxyUrl}
-                womenApiKey={womenApiKey}
-                womenAppID={womenAppID}
-                womenOrgID={womenOrgID}
-              />
-            ),
+            element: <ProductPageWomen />,
           },
           {
             path: "/women/products/:id",
@@ -69,14 +72,7 @@ const router = createBrowserRouter([
           { index: true, element: <MenPageDetails /> },
           {
             path: "/men/products",
-            element: (
-              <ProductPageMen
-                proxyUrl={proxyUrl}
-                menApiKey={menApiKey}
-                menAppID={menAppID}
-                menOrgID={menOrgID}
-              />
-            ),
+            element: <ProductPageMen />,
           },
           {
             path: "/men/products/:id",
@@ -110,7 +106,12 @@ const router = createBrowserRouter([
 ]);
 
 const App = () => {
-  return <RouterProvider router={router} />;
+  return (
+    <QueryClientProvider client={queryClient}>
+      <ReactQueryDevtools initialIsOpen={false} />
+      <RouterProvider router={router} />
+    </QueryClientProvider>
+  );
 };
 
 export default App;
