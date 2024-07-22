@@ -3,10 +3,18 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 
 const ProductDescriptionImagesSection = ({ item }) => {
-  const photoSrc =
+  const photo2 =
     item.photos && item.photos.length > 1
       ? `https://api.timbu.cloud/images/${item.photos[1].url}`
         : `https://api.timbu.cloud/images/${item.photos[0].url}`
+  const photo3 =
+    item.photos && item.photos.length > 2
+      ? `https://api.timbu.cloud/images/${item.photos[2].url}`
+        : `https://api.timbu.cloud/images/${item.photos[0].url}`
+  const photo4 =
+    item.photos && item.photos.length > 3
+      ? `https://api.timbu.cloud/images/${item.photos[3].url}`
+      : `https://api.timbu.cloud/images/${item.photos[0].url}`;
   return (
     <>
       <Carousel className="flex-1 lg:hidden">
@@ -20,7 +28,7 @@ const ProductDescriptionImagesSection = ({ item }) => {
         </div>
         <div>
           <img
-            src={photoSrc}
+            src={photo2}
             alt="image of the product"
             className="w-[251.72px] xl:h-[605.72px] xl:w-[321.72px]"
           />
@@ -28,7 +36,7 @@ const ProductDescriptionImagesSection = ({ item }) => {
         </div>
         <div>
           <img
-            src={`https://api.timbu.cloud/images/${item?.photos[0].url}`}
+            src={photo3}
             alt="image of the product"
             className="w-[251.72px] xl:h-[605.72px] xl:w-[321.72px]"
           />
@@ -36,7 +44,7 @@ const ProductDescriptionImagesSection = ({ item }) => {
         </div>
         <div>
           <img
-            src={photoSrc}
+            src={photo4}
             alt="image of the product"
             className="w-[251.72px] xl:h-[605.72px] xl:w-[321.72px]"
           />
@@ -51,19 +59,19 @@ const ProductDescriptionImagesSection = ({ item }) => {
             className="w-[251.72px] xl:h-[605.72px] xl:w-[321.72px]"
           />
           <img
-            src={photoSrc}
+            src={photo2}
             alt="image of the product"
             className="w-[251.72px] xl:h-[605.72px] xl:w-[321.72px]"
           />
         </section>
         <section className="mx-auto flex flex-row gap-x-2">
           <img
-            src={`https://api.timbu.cloud/images/${item?.photos[0].url}`}
+            src={photo3}
             alt="image of the product"
             className="w-[251.72px] xl:h-[605.72px] xl:w-[321.72px]"
           />
           <img
-            src={photoSrc}
+            src={photo4}
             alt="image of the product"
             className="w-[251.72px] xl:h-[605.72px] xl:w-[321.72px]"
           />
