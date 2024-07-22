@@ -18,7 +18,6 @@ const ProductPageWomen = () => {
   const [page, setPage] = useState(1);
   const [progress, setProgress] = useState(0.3);
   const [currentNumber, setCurrentNumber] = useState(10);
-  // const { data, error, loading } = useFetchWoMenData(page);
   const switchPage = (value, newNumber, newProgress) => {
     setPage(value);
     setCurrentNumber(newNumber);
@@ -27,7 +26,8 @@ const ProductPageWomen = () => {
 
 const {data, isLoading, error} = useQuery({
   queryKey : ["women data", page],
-  queryFn: () => fetchWoMenData(page)
+  queryFn: () => fetchWoMenData(page),
+  staleTime: Infinity,
 })
 
   if (isLoading) return <Spinner />;

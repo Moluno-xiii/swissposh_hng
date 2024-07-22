@@ -30,4 +30,22 @@ const fetchWoMenData = async (page) => {
   return result
 };
 
-export { fetchMenData, fetchWoMenData };
+const fetchProductDescriptionWomen = async (id) => {
+  const response = await fetch(
+    `${proxyUrl}/products/${id}?organization_id=${womenOrgID}&reverse_sort=false&page=1&size=10&Appid=${womenAppID}&Apikey=${womenApiKey}`,
+  );
+
+  if (!response.ok) {
+    throw new Error("Network response was not ok");
+  }
+
+  return response.json();
+};
+
+const prefetchProductDescriptionWomen = (queryClient, id) => {
+  return queryClient.prefetchQuery(["productDescriptionWomen", id], () =>
+    fetchProductDescriptionWomen(id),
+  );
+};
+
+export { fetchMenData, fetchWoMenData, prefetchProductDescriptionWomen };

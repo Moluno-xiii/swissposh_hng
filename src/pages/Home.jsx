@@ -31,7 +31,6 @@ function Home() {
         pauseOnHover
       />
       <div className="mt-[52px] md:mt-[70px]">
-        {navigation.state === "loading" && <Spinner />}
         <Outlet />
       </div>
       <MobileFooterNavbar />

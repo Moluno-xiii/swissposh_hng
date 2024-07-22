@@ -24,11 +24,11 @@ const ProductPageWomen = () => {
     setProgress(newProgress);
   };
 
-  const {data, isLoading, error} = useQuery({
+  const { data, isLoading, error } = useQuery({
     queryKey: ["men's data", page],
-    queryFn:() => fetchMenData(page)
-  })
-
+    queryFn: () => fetchMenData(page),
+    staleTime: Infinity,
+  });
 
   if (isLoading) return <Spinner />;
   if (error) return <ErrorMessage message={error} />;
